@@ -1,6 +1,6 @@
 <template>
   <div
-    class="container pb-[70px] bg-[url('/src/assets/images/mobile/mobile-bg.png')] bg-cover bg-no-repeat"
+    class="container pb-[54px] bg-[url('/src/assets/images/mobile/mobile-bg.png')] bg-cover bg-no-repeat"
   >
     <div class="wrapper flex items-center justify-center flex-col">
       <div class="content max-w-[360px]">
@@ -82,7 +82,7 @@
             Hoziroq ariza qoldiring va 10% chegirmaga ega bo'ling
           </h2>
           <button
-            class="bg-[#407BFF] rounded-[50px] text-white px-[113px] py-[14px] mb-[20px] hover:bg-[#2C5AC2]
+            class="bg-[#407BFF] rounded-[50px] text-white px-[103px] py-[14px] mb-[20px] hover:bg-[#2C5AC2]
              transition-all"
           >
             <p class="w-[115px]">Ariza qoldirish</p>
