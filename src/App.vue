@@ -2,10 +2,12 @@
   <Header/>
   <TalimInfo/>
   <TextSection/>
+  <PriceSection/>
 </template>
 
 <script>
 import Header from './components/Header.vue';
+import PriceSection from './components/PriceSection.vue';
 import TalimInfo from './components/TalimInfo.vue';
 import TextSection from './components/TextSection.vue';
 
@@ -18,7 +20,8 @@ export default {
   components: {
     Header,
     TalimInfo,
-    TextSection
+    TextSection,
+    PriceSection
 }
 }
 </script>
