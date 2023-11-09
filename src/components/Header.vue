@@ -82,8 +82,8 @@
             Hoziroq ariza qoldiring va 10% chegirmaga ega bo'ling
           </h2>
           <button
-            class="bg-[#407BFF] rounded-[50px] text-white px-[103px] py-[14px] mb-[20px] hover:bg-[#2C5AC2]
-             transition-all"
+            class="bg-[#407BFF] rounded-[50px] text-white px-[103px] py-[14px] mb-[20px] hover:bg-[#2C5AC2] transition-all"
+            v-on:click="isOpen = true"
           >
             <p class="w-[115px]">Ariza qoldirish</p>
           </button>
@@ -96,15 +96,139 @@
       </h3>
     </div>
   </div>
+  <!-- <div
+    class="fixed top-0 bottom-0 left-0 right-0 bg-black bg-opacity-[50%]"
+    v-if="isOpen"
+  >
+    <div
+      class="header_modal bg-white 2xl:w-[450px] w-[353px] h-[315px] mx-auto 2xl:h-[405px] 2xl:mt-[10%] mt-[234px] p-[20px] rounded-[12px] 2xl:py-[40px] 2xl:px-[30px] relative"
+    >
+      <button
+        v-on:click="isOpen = !isOpen"
+        class="absolute top-[-40px] right-0"
+      >
+        <img src="/src/assets/icons/remove.svg" alt="plus" />
+      </button>
+
+      <h1
+        class="text-center 2xl:text-[24px] text-[20px] font-semibold mb-[3px]"
+      >
+        Telefon raqamingizni qoldiring
+      </h1>
+      <p
+        class="text-center text-[#BABABA] 2xl:text-[18px] text-[16px] mb-[20px]"
+      >
+        Biz siz bilan albatta bog'lanamiz
+      </p>
+      <form>
+        <input
+          class="border-b-[1px] border-[#E0E0E0] w-full 2xl:mb-[50px] mb-[40px]"
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Ism"
+        />
+        <input
+          class="border-b-[1px] border-[#E0E0E0] w-full mb-[50px]"
+          type="tel"
+          id="tel"
+          name="tel"
+          placeholder="Raqamingiz"
+        />
+      </form>
+      <button
+        class="bg-[#407BFF] rounded-[50px] text-white px-[103px] py-[14px] mb-[20px] hover:bg-[#2C5AC2] transition-all"
+      >
+        <p class="w-[115px]">Ariza qoldirish</p>
+      </button>
+    </div>
+  </div> -->
+
+  <teleport to="body">
+    <div class="" v-if="isOpen">
+      <div
+        @click="isOpen = false"
+        class="fixed inset-0 top-0 left-0 bottom-0 bg-[#00000099] z-[1]"
+      ></div>
+      <div
+        class="fixed modal top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center flex-col z-[2] bg-white p-[20px] rounded-xl"
+        v-if="isOpen"
+      >
+        <button
+          v-on:click="isOpen = !isOpen"
+          class="absolute top-[-40px] right-[0%]"
+        >
+          <img src="/src/assets/icons/remove.svg" alt="plus" />
+        </button>
+        <h1
+          class="text-center text-[22px] font-semibold mb-[3px]"
+        >
+          Telefon raqamingizni qoldiring
+        </h1>
+        <p
+          class="text-center text-[#BABABA] text-[16px] mb-[20px]"
+        >
+          Biz siz bilan albatta bog'lanamiz
+        </p>
+        <form class="w-[310px]">
+          <input
+            class="border-b-[1px] border-[#E0E0E0] w-[300px] 2xl:mb-[50px] mb-[40px]"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Ism"
+          />
+          <input
+            class="border-b-[1px] border-[#E0E0E0] w-[300px] mb-[50px]"
+            type="tel"
+            id="tel"
+            name="tel"
+            placeholder="Raqamingiz"
+          />
+        </form>
+        <button
+          class="bg-[#407BFF] rounded-[50px] text-white px-[103px] py-[14px] mb-[10px] hover:bg-[#2C5AC2] transition-all"
+        >
+          <p class="w-[115px]">Ariza qoldirish</p>
+        </button>
+      </div>
+    </div>
+  </teleport>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      isOpen: false,
+    };
+  },
+  // mounted() {
+  //   setTimeout(() => {
+  //     this.isOpen = true;
+  //   }, 1500);
+  // },
+  methods: {},
+};
 </script>
 
 <style scoped>
+
+.modal {
+  animation: fadeIn 0.7s;
+  transition: 2s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @media screen and (min-width: 440px) {
-  .container{
+  .container {
     padding-bottom: 0px;
   }
 }
