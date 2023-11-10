@@ -1,5 +1,5 @@
 <template>
-  <div class="container pt-[30px]">
+  <div class="container pt-[10px]">
     <div class="wrapper flex items-center justify-center flex-col">
       <h1 class="m-auto pb-[30px] text-[24px] text-[#1B1B35] font-bold">
         Sertifikatlar

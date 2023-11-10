@@ -32,3 +32,19 @@ export default {
   },
 };
 </script>
+
+<style>
+::-webkit-scrollbar {
+  width: 12px; /* Ширина скроллбара */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #a0a0a0; /* Цвет ползунка */
+  border-radius: 2px; /* Скругление углов ползунка */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Цвет фона дорожки */
+  border-radius: 1px; /* Скругление углов дорожки */
+}
+</style>

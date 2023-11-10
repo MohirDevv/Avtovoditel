@@ -20,7 +20,7 @@
           Bo'lib to'lash
         </h2>
       </div>
-      <div class="cardlist py-[20px]">
+      <div class="cardlist flex items-center justify-center flex-col py-[20px]">
         <div
           class="cardLevel1 flex items-center justify-center gap-3 pb-[12px]"
         >
@@ -28,35 +28,49 @@
             class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg gap-4 p-[7px] sm:p-[15px]"
           >
             <h1
-              class="bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[4px] px-[15px]"
+              class="h1 bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[4px] px-[15px]"
             >
               B
             </h1>
-            <p class="text-[#1B1B35] text-[22px] font-semibold" v-if="isNaqd">
+            <p
+              class="mainp text-[#1B1B35] text-[22px] font-semibold"
+              v-if="isNaqd"
+            >
               2 900 000
             </p>
-            <p class="w-[140px] text-center text-[14px] text-[#808080]" v-if="isOylik">
+            <p
+              class="subp w-[140px] text-center text-[14px] text-[#808080]"
+              v-if="isOylik"
+            >
               Boshlangich o'qish summasi 40% qolgani 90 kun ichida, o'qish
               davomiyligi 4 oy 20 kun
             </p>
-            <img src="/src/assets/icons/b_class_car.svg" alt="#" />
+
+            <img src="/src/assets/icons/b_class_car.svg" class="car" alt="#" />
+
             <button
-              class="border-[#E0E0E0] border-[2px] px-[22px] py-[12px] rounded-lg text-[14px] text-[#1B1B35] font-medium cursor-pointer"
+              class="button border-[#E0E0E0] border-[2px] px-[22px] py-[12px] rounded-lg text-[14px] text-[#1B1B35] font-medium cursor-pointer"
             >
               Kursni tanlash
             </button>
           </div>
           <div
             class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg p-[7px] sm:p-[15px]"
-            :class="isOylik ? ' gap-[31px]' : 'gap-4'">
+            :class="isOylik ? ' gap-[31px]' : 'gap-4'"
+          >
             <h1
               class="bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[7px] px-[8px]"
             >
               BC
             </h1>
-            <p class="text-[#1B1B35] text-[22px] font-semibold" v-if="isNaqd">3 500 000</p>
-            <p class="w-[140px] text-center text-[14px] text-[#808080]" v-if="isOylik">
-              Boshlangich o'qish summasi 1 000 000, oq'ish davomiyligi 6 oy 
+            <p class="text-[#1B1B35] text-[22px] font-semibold" v-if="isNaqd">
+              3 500 000
+            </p>
+            <p
+              class="w-[140px] text-center text-[14px] text-[#808080]"
+              v-if="isOylik"
+            >
+              Boshlangich o'qish summasi 1 000 000, oq'ish davomiyligi 6 oy
             </p>
             <div class="images flex gap-1">
               <img src="/src/assets/icons/bc_class_car.svg" alt="#" />
@@ -72,15 +86,21 @@
         <div class="cardLevel2 flex items-center justify-center gap-3">
           <div
             class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg p-[7px] sm:p-[15px]"
-            :class="isOylik ? ' gap-[31px]' : 'gap-4'">
+            :class="isOylik ? ' gap-[31px]' : 'gap-4'"
+          >
             <h1
               class="bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[4px] px-[15px]"
             >
               C
             </h1>
-            <p class="text-[#1B1B35] text-[22px] font-semibold" v-if="isNaqd">1 300 000</p>
-            <p class="w-[140px] text-center text-[14px] text-[#808080]" v-if="isOylik">
-              Boshlangich o'qish summasi 45%,  o'qish davomiyligi 3 oy
+            <p class="text-[#1B1B35] text-[22px] font-semibold" v-if="isNaqd">
+              1 300 000
+            </p>
+            <p
+              class="w-[140px] text-center text-[14px] text-[#808080]"
+              v-if="isOylik"
+            >
+              Boshlangich o'qish summasi 45%, o'qish davomiyligi 3 oy
             </p>
             <img src="/src/assets/icons/c_class_car.svg" alt="#" />
             <button
@@ -91,15 +111,21 @@
           </div>
           <div
             class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg p-[7px] sm:p-[15px]"
-            :class="isOylik ? ' gap-[29px]' : 'gap-[15px]'">
+            :class="isOylik ? ' gap-[29px]' : 'gap-[15px]'"
+          >
             <h1
               class="bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[7px] px-[16px]"
             >
               D
             </h1>
-            <p class="text-[#1B1B35] text-[22px] font-semibold" v-if="isNaqd">3 100 000</p>
-            <p class="w-[140px] text-center text-[14px] text-[#808080]" v-if="isOylik">
-              Boshlangich o'qish summasi 45%,  o'qish davomiyligi 3 oy
+            <p class="text-[#1B1B35] text-[22px] font-semibold" v-if="isNaqd">
+              3 100 000
+            </p>
+            <p
+              class="w-[140px] text-center text-[14px] text-[#808080]"
+              v-if="isOylik"
+            >
+              Boshlangich o'qish summasi 45%, o'qish davomiyligi 3 oy
             </p>
             <img src="/src/assets/icons/d_class_car.svg" alt="#" />
             <button
@@ -109,17 +135,24 @@
             </button>
           </div>
         </div>
-        <div class="cardLevel3 flex items-center justify-center pt-[12px] w-[330px]">
+        <div
+          class="cardLevel3 flex items-center justify-center pt-[12px] w-[330px]"
+        >
           <div
             class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg gap-4 p-[7px] sm:p-[15px]"
           >
             <h1
-              class="bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[4px] px-[15px]"
+              class="bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[4px] px-[15px] hover:text-[white]"
             >
               E
             </h1>
-            <p class="text-[#1B1B35] text-[22px] font-semibold" v-if="isNaqd">1 500 000</p>
-            <p class="w-[170px] text-center text-[14px] text-[#808080]" v-if="isOylik">
+            <p class="text-[#1B1B35] text-[22px] font-semibold" v-if="isNaqd">
+              1 500 000
+            </p>
+            <p
+              class="w-[170px] text-center text-[14px] text-[#808080]"
+              v-if="isOylik"
+            >
               50% dan 2 oy, o'qish davomiyligi 2 oy
             </p>
             <img src="/src/assets/icons/e_class_car.svg" alt="#" />
@@ -187,4 +220,25 @@ export default {
   width: 150px;
   transition: 0.3s;
 }
+
+/* .card:hover .h1,
+.card:hover .mainp,
+.card:hover,
+.card:hover .car,
+.card:hover .button,
+.card:hover .subp {
+  color: white;
+  background: #407bff;
+  transition: .03s;
+}
+.card:hover .h1 {
+  background: rgba(255, 255, 255, 0.1);
+  transition: .03s;
+}
+.card:hover .car {
+  background-color: #407bff;
+  filter: brightness(-0) invert(-11);
+  fill: #ffffff;
+  background: #407bff;
+} */
 </style>
