@@ -2,12 +2,17 @@
   <div
     class="container pb-[54px] bg-[url('/src/assets/images/mobile/mobile-bg.png')] bg-cover bg-no-repeat"
   >
-    <div class="wrapper flex items-center justify-center flex-col">
+    <div
+      class="wrapper flex items-center justify-center flex-col overflow-x-hidden"
+    >
       <div class="content max-w-[360px]">
-        <div class="entrImage">
+        <div
+          class="entrImage flex items-start justify-start relative pb-[10px]"
+        >
+          <img src="../assets/icons/car+symbol.svg" class="" alt="#" />
           <img
-            src="../assets/images/mobile/mobile_header.png"
-            class=""
+            src="/src/assets/icons/last-symbol.png"
+            class="absolute -top-5 -right-12"
             alt="#"
           />
         </div>
@@ -96,53 +101,6 @@
       </h3>
     </div>
   </div>
-  <!-- <div
-    class="fixed top-0 bottom-0 left-0 right-0 bg-black bg-opacity-[50%]"
-    v-if="isOpen"
-  >
-    <div
-      class="header_modal bg-white 2xl:w-[450px] w-[353px] h-[315px] mx-auto 2xl:h-[405px] 2xl:mt-[10%] mt-[234px] p-[20px] rounded-[12px] 2xl:py-[40px] 2xl:px-[30px] relative"
-    >
-      <button
-        v-on:click="isOpen = !isOpen"
-        class="absolute top-[-40px] right-0"
-      >
-        <img src="/src/assets/icons/remove.svg" alt="plus" />
-      </button>
-
-      <h1
-        class="text-center 2xl:text-[24px] text-[20px] font-semibold mb-[3px]"
-      >
-        Telefon raqamingizni qoldiring
-      </h1>
-      <p
-        class="text-center text-[#BABABA] 2xl:text-[18px] text-[16px] mb-[20px]"
-      >
-        Biz siz bilan albatta bog'lanamiz
-      </p>
-      <form>
-        <input
-          class="border-b-[1px] border-[#E0E0E0] w-full 2xl:mb-[50px] mb-[40px]"
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Ism"
-        />
-        <input
-          class="border-b-[1px] border-[#E0E0E0] w-full mb-[50px]"
-          type="tel"
-          id="tel"
-          name="tel"
-          placeholder="Raqamingiz"
-        />
-      </form>
-      <button
-        class="bg-[#407BFF] rounded-[50px] text-white px-[103px] py-[14px] mb-[20px] hover:bg-[#2C5AC2] transition-all"
-      >
-        <p class="w-[115px]">Ariza qoldirish</p>
-      </button>
-    </div>
-  </div> -->
 
   <teleport to="body">
     <div class="" v-if="isOpen">
@@ -160,14 +118,10 @@
         >
           <img src="/src/assets/icons/remove.svg" alt="plus" />
         </button>
-        <h1
-          class="text-center text-[22px] font-semibold mb-[3px]"
-        >
+        <h1 class="text-center text-[22px] font-semibold mb-[3px]">
           Telefon raqamingizni qoldiring
         </h1>
-        <p
-          class="text-center text-[#BABABA] text-[16px] mb-[20px]"
-        >
+        <p class="text-center text-[#BABABA] text-[16px] mb-[20px]">
           Biz siz bilan albatta bog'lanamiz
         </p>
         <form class="w-[310px]">
@@ -206,14 +160,13 @@ export default {
   mounted() {
     setTimeout(() => {
       this.isOpen = true;
-    }, 1500);
+    }, 3000);
   },
   methods: {},
 };
 </script>
 
 <style scoped>
-
 .modal {
   animation: fadeIn 0.7s;
   transition: 2s;

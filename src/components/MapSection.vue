@@ -8,7 +8,7 @@
       class="z-10"
     ></iframe>
     <div
-      class="flex items-center justify-between w-[330px] py-[10px] px-[15px] rounded-[6px] h-[52px] border-[1px] border-[#EAEAEA] z-50 relative top-[-52px] left-0 bg-white"
+      class="flex items-center justify-between w-[330px] py-[10px] px-[15px] rounded-[6px] h-[52px] border-[1px] border-[#EAEAEA]  relative top-[-52px] left-0 bg-white"
     >
       <div class="flex items-center justify-between w-full">
         <p class="text-[#1B1B35] text-[16px] font-medium">Filialni tanlang</p>
