@@ -203,11 +203,11 @@ export default {
       isOpen: false,
     };
   },
-  // mounted() {
-  //   setTimeout(() => {
-  //     this.isOpen = true;
-  //   }, 1500);
-  // },
+  mounted() {
+    setTimeout(() => {
+      this.isOpen = true;
+    }, 1500);
+  },
   methods: {},
 };
 </script>

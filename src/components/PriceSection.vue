@@ -25,7 +25,7 @@
           class="cardLevel1 flex items-center justify-center gap-3 pb-[12px]"
         >
           <div
-            class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg gap-4 p-[15px]"
+            class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg gap-4 p-[7px] sm:p-[15px]"
           >
             <h1
               class="bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[4px] px-[15px]"
@@ -47,7 +47,7 @@
             </button>
           </div>
           <div
-            class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg p-[15px]"
+            class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg p-[7px] sm:p-[15px]"
             :class="isOylik ? ' gap-[31px]' : 'gap-4'">
             <h1
               class="bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[7px] px-[8px]"
@@ -71,7 +71,7 @@
         </div>
         <div class="cardLevel2 flex items-center justify-center gap-3">
           <div
-            class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg p-[15px]"
+            class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg p-[7px] sm:p-[15px]"
             :class="isOylik ? ' gap-[31px]' : 'gap-4'">
             <h1
               class="bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[4px] px-[15px]"
@@ -90,7 +90,7 @@
             </button>
           </div>
           <div
-            class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg p-[15px]"
+            class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg p-[7px] sm:p-[15px]"
             :class="isOylik ? ' gap-[29px]' : 'gap-[15px]'">
             <h1
               class="bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[7px] px-[16px]"
@@ -109,9 +109,9 @@
             </button>
           </div>
         </div>
-        <div class="cardLevel3 flex items-center justify-center pt-[12px]">
+        <div class="cardLevel3 flex items-center justify-center pt-[12px] w-[330px]">
           <div
-            class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg gap-4 p-[15px]"
+            class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg gap-4 p-[7px] sm:p-[15px]"
           >
             <h1
               class="bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[4px] px-[15px]"
@@ -119,7 +119,7 @@
               E
             </h1>
             <p class="text-[#1B1B35] text-[22px] font-semibold" v-if="isNaqd">1 500 000</p>
-            <p class="w-[180px] text-center text-[14px] text-[#808080]" v-if="isOylik">
+            <p class="w-[170px] text-center text-[14px] text-[#808080]" v-if="isOylik">
               50% dan 2 oy, o'qish davomiyligi 2 oy
             </p>
             <img src="/src/assets/icons/e_class_car.svg" alt="#" />
@@ -132,7 +132,7 @@
         </div>
       </div>
       <button
-        class="bg-[#407BFF] rounded-[50px] text-white px-[123px] py-[14px] mb-[20px] hover:bg-[#2C5AC2] transition-all"
+        class="bg-[#407BFF] rounded-[50px] text-white px-[113px] py-[14px] mb-[20px] hover:bg-[#2C5AC2] transition-all"
       >
         <p class="w-[115px]">Ariza qoldirish</p>
       </button>
