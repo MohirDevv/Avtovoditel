@@ -65,7 +65,7 @@
       v-if="isTuzel50"
     ></iframe>
     <div
-      class="flex z-40 items-center justify-between w-[full] rounded-[6px] border-[1px] border-[#EAEAEA] relative top-[-72px] left-0 mx-[20px]"
+      class="flex z-40 items-center justify-between w-[full] rounded-[6px] border-[1px] border-[#EAEAEA] relative top-[-72px] left-0 mx-[20px] xl:hidden"
     >
       <div
         class="flex items-center justify-between py-[10px] px-[15px] bg-white rounded-[6px] w-full z-40"
@@ -334,6 +334,176 @@
         </div>
       </div>
     </div>
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <div
+      class="xl:flex z-40 items-center justify-between w-[full] rounded-[6px] border-[1px] border-[#EAEAEA] relative top-[-72px] left-0 mx-[20px] hidden"
+    >
+
+      <div
+        class="scroll z-10 block"
+      >
+        <div
+          class="w-[550px] bg-white rounded-[8px] border-[1px] border-[#EAEAEA] absolute bottom-[-40px] 
+          left-[10px] p-[30px]"
+        >
+          <div>
+            <h1 class="text-[32px] font-bold">Filiallar</h1>
+            <div
+              class="hoveroption border-b-[1px] border-[#EAEAEA] py-[15px] mb-[15px] hover:text-[#407BFF] cursor-pointer"
+              @click="
+                (isDefault = false),
+                  (isSergili = true),
+                  (isTuzel = false),
+                  (isPanelniy = false),
+                  (isYalongoch = false),
+                  (isQushbegi = false),
+                  (isSergili6a = false),
+                  (isTuzel50 = false),
+                  (isOpen = false)
+              "
+            >
+              <h3 class="text-[18px] font-normal text-[#1B1B35]">
+                Sergeli tumani Quruvchilar massivi 32 uy 1 qavat. Mo'ljal
+                305-maktab
+              </h3>
+              <p class="text-[#808080] text-[18px] font-normal">
+                Tel: 99 435 11 88
+              </p>
+            </div>
+            <div
+              class="hoveroption border-b-[1px] border-[#EAEAEA] pb-[15px] mb-[15px] cursor-pointer"
+              @click="
+                (isDefault = false),
+                  (isTuzel = true),
+                  (isSergili = false),
+                  (isPanelniy = false),
+                  (isYalongoch = false),
+                  (isQushbegi = false),
+                  (isSergili6a = false),
+                  (isTuzel50 = false),
+                  (isOpen = false)
+              "
+            >
+              <h3 class="text-[18px] font-normal text-[#1B1B35]">
+                Yashnobod tumani Tuzel chorraxa 2-qavat
+              </h3>
+              <p class="text-[#808080] text-[18px] font-normal">
+                Tel 99 919 11 88
+              </p>
+            </div>
+            <div
+              class="hoveroption border-b-[1px] border-[#EAEAEA] pb-[15px] mb-[15px] cursor-pointer"
+              @click="
+                (isDefault = false),
+                  (isTuzel = false),
+                  (isSergili = false),
+                  (isPanelniy = true),
+                  (isYalongoch = false),
+                  (isQushbegi = false),
+                  (isSergili6a = false),
+                  (isTuzel50 = false),
+                  (isOpen = false)
+              "
+            >
+              <h3 class="text-[18px] font-normal text-[#1B1B35]">
+                Yashnobod tumani Panelniy massiv Oxangrabo ko'chasi
+              </h3>
+              <p class="text-[#808080] text-[18px] font-normal">
+                Tel: 94 424 11 88
+              </p>
+            </div>
+            <div
+              class="hoveroption border-b-[1px] border-[#EAEAEA] pb-[15px] mb-[15px] cursor-pointer"
+              @click="
+                (isDefault = false),
+                  (isTuzel = false),
+                  (isSergili = false),
+                  (isPanelniy = false),
+                  (isYalongoch = true),
+                  (isQushbegi = false),
+                  (isSergili6a = false),
+                  (isTuzel50 = false),
+                  (isOpen = false)
+              "
+            >
+              <h3 class="text-[18px] font-normal text-[#1B1B35]">
+                Mirzo Ulugbek tumani yalangoch daxasi Madaniyat instituti
+                yaqinida
+              </h3>
+              <p class="text-[#808080] text-[18px] font-normal">
+                Tel: 88 333 11 88
+              </p>
+            </div>
+            <button
+              class="flex justify-start flex-col hoveroption border-b-[1px] border-[#EAEAEA] pb-[15px] mb-[15px] cursor-pointer"
+              @click="
+                (isDefault = false),
+                  (isTuzel = false),
+                  (isSergili = false),
+                  (isPanelniy = false),
+                  (isYalongoch = false),
+                  (isQushbegi = true),
+                  (isSergili6a = false),
+                  (isTuzel50 = false),
+                  (isOpen = false)
+              "
+            >
+              <h3 class="text-[18px] font-normal text-[#1B1B35] text-left">
+                Yakkasaroy tumani Qushbegi daxasi 30 B uy. Oldingi Sulton
+                restorani binosi 3 qavat
+              </h3>
+              <p class="text-[#808080] text-[18px] font-normal">
+                Tel: 90 929 11 88
+              </p>
+            </button>
+            <div
+              class="hoveroption border-b-[1px] border-[#EAEAEA] pb-[15px] mb-[15px] cursor-pointer"
+              @click="
+                (isDefault = false),
+                  (isTuzel = false),
+                  (isSergili = false),
+                  (isPanelniy = false),
+                  (isYalongoch = false),
+                  (isQushbegi = false),
+                  (isSergili6a = true),
+                  (isTuzel50 = false),
+                  (isOpen = false)
+              "
+            >
+              <h3 class="text-[18px] font-normal text-[#1B1B35]">
+                Sergeli tumani 6A 77 uy
+              </h3>
+              <p class="text-[#808080] text-[18px] font-normal">
+                Tel: 99 710 05 55
+              </p>
+            </div>
+            <div
+              class="hoveroption pb-[15px] mb-[15px] cursor-pointer"
+              @click="
+                (isDefault = false),
+                  (isTuzel = false),
+                  (isSergili = false),
+                  (isPanelniy = false),
+                  (isYalongoch = false),
+                  (isQushbegi = false),
+                  (isSergili6a = false),
+                  (isTuzel50 = true),
+                  (isOpen = false)
+              "
+            >
+              <h3 class="text-[18px] font-normal text-[#1B1B35]">
+                Yashnobod tumani Tuzel - 1 50 uy
+              </h3>
+              <p class="text-[#808080] text-[18px] font-normal">
+                Tel: 93 009 77 88
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -376,4 +546,11 @@ export default {
   color: #407bff;
   transition: 0.3s;
 }
+
+@media screen and (min-width: 1280px) {
+  iframe{
+    height: 862px;
+  }
+}
+
 </style>
