@@ -146,7 +146,7 @@
     />
 
     <p
-      class="text-[#D8E1FF] text-[20px] font-medium absolute bg-[#3d3c3c6b] rounded px-[20px] py-[10px] top-0 left-[40%] hidden xl:block"
+      class="paragc text-[#D8E1FF] text-[20px] font-medium absolute bg-[#3d3c3c6b] rounded px-[20px] py-[10px] text-center hidden xl:block"
     >
       Xonalarimiz eshiklari siz uchun ochiq
     </p>
@@ -217,6 +217,15 @@ export default {
 </script>
 
 <style scoped>
+
+.wrapper{
+  max-width: 1980px;
+}
+.paragc{
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
 .modal {
   animation: fadeIn 0.7s;
   transition: 2s;

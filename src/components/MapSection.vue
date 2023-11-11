@@ -65,9 +65,11 @@
       v-if="isTuzel50"
     ></iframe>
     <div
-      class="flex z-40 items-center justify-between w-[full] rounded-[6px] border-[1px] border-[#EAEAEA] relative top-[-72px] left-0  mx-[20px]"
+      class="flex z-40 items-center justify-between w-[full] rounded-[6px] border-[1px] border-[#EAEAEA] relative top-[-72px] left-0 mx-[20px]"
     >
-      <div class="flex items-center justify-between  py-[10px] px-[15px] bg-white rounded-[6px] w-full z-40">
+      <div
+        class="flex items-center justify-between py-[10px] px-[15px] bg-white rounded-[6px] w-full z-40"
+      >
         <p
           class="text-[#1B1B35] text-[16px] font-medium cursor-pointer"
           v-on:click="isOpen = !isOpen"
@@ -174,7 +176,7 @@
         class="scroll relative z-10 block top-[-897.5px] left-[-97%] xl:left-[-99%]"
       >
         <div
-          class="w-[330px] bg-white rounded-[8px] border-[1px] border-[#EAEAEA] absolute top-[461px] left-[-15.5px] p-[10px] overflow-auto h-[400px] "
+          class="w-[330px] bg-white rounded-[8px] border-[1px] border-[#EAEAEA] absolute top-[461px] left-[-15.5px] p-[10px] overflow-auto h-[400px]"
         >
           <div>
             <!-- <h1 class="text-[32px] font-bold mb-[20px]">Filiallar</h1> -->
@@ -355,19 +357,18 @@ export default {
 </script>
 
 <style scoped>
-/* Общие стили */
 ::-webkit-scrollbar {
-  width: 12px; /* Ширина скроллбара */
+  width: 12px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #a0a0a0; /* Цвет ползунка */
-  border-radius: 6px; /* Скругление углов ползунка */
+  background-color: #a0a0a0;
+  border-radius: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #f0f0f0; /* Цвет фона дорожки */
-  border-radius: 6px; /* Скругление углов дорожки */
+  background-color: #f0f0f0;
+  border-radius: 6px;
 }
 
 .hoveroption:hover h3,

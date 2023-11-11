@@ -9,7 +9,7 @@
       <div class="iconsInfo pt-[40px] xl:flex xl:items-center xl:justify-center xl:gap-[100px]">
         <div class="level1 flex items-center justify-center gap-[110px] pb-[40px] xl:pb-0">
           <div class="first flex items-start justify-center flex-col">
-            <img src="/src/assets/icons/bigger_home.svg" class="bg-[#ffffff] bg-opacity-10 p-[8px] rounded-[50px]" alt="#">
+            <img src="/src/assets/icons/bigger_home.svg" class="bg-[#ffffff] bg-opacity-10 p-[10px] rounded-[50px]" alt="#">
             <h3 class="text-white text-[40px] font-semibold">10+</h3>
             <p class="text-[#FFFFFFF2] text-[18px] font-medium">Filiallar soni</p>
           </div>
@@ -21,7 +21,7 @@
         </div>
         <div class="level2 flex items-center justify-center gap-[110px]">
           <div class="first flex items-start justify-center flex-col">
-            <img src="/src/assets/icons/speed.svg" class="bg-[#ffffff] bg-opacity-10 p-[8px] rounded-[50px]" alt="#">
+            <img src="/src/assets/icons/speed.svg" class="bg-[#ffffff] bg-opacity-10 p-[10px] rounded-[50px]" alt="#">
             <h3 class="text-white text-[40px] font-semibold">10 yil</h3>
             <p class="text-[#FFFFFFF2] text-[18px] font-medium">Faoliyat vaqti</p>
           </div>

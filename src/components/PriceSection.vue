@@ -1,9 +1,10 @@
 <template>
-  <div class="container bg-white py-[50px]">
+  <div class="container bg-white py-[50px] xl:py-[150px]">
     <div class="wrapper flex items-center justify-center flex-col">
-      <h1 class="text-[#1B1B35] text-[24px] font-bold">Narxlarlar</h1>
+      <h1 class="text-[#1B1B35] text-[24px] font-bold xl:text-[40px]">Narxlarlar</h1>
       <div
-        class="priceOption flex items-center justify-center gap-6 mt-[23px] p-[2px] bg-[#F3F3F3] rounded-lg"
+        class="priceOption flex items-center justify-center gap-6 mt-[23px] p-[2px] bg-[#F3F3F3] rounded-lg
+         xl:mb-[42px]"
       >
         <h2
           class="text-[14px] leading-4 cursor-pointer"
@@ -20,7 +21,7 @@
           Bo'lib to'lash
         </h2>
       </div>
-      <div class="cardlist flex items-center justify-center flex-col py-[20px]">
+      <div class="cardlist flex items-center justify-center flex-col py-[20px] xl:mb-[50px]">
         <div
           class="cardLevel1 flex items-center justify-center gap-3 pb-[12px]"
         >
@@ -28,12 +29,14 @@
             class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg gap-4 p-[7px] sm:p-[15px]"
           >
             <h1
-              class="h1 bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[4px] px-[15px]"
+              class="h1 bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[4px] px-[15px]
+               xl:text-[40px] xl:px-[22px] xl:py-[6px]"
             >
               B
             </h1>
             <p
-              class="mainp text-[#1B1B35] text-[22px] font-semibold"
+              class="mainp text-[#1B1B35] text-[22px] font-semibold
+               xl:text-[34px]"
               v-if="isNaqd"
             >
               2 900 000
@@ -46,10 +49,11 @@
               davomiyligi 4 oy 20 kun
             </p>
 
-            <img src="/src/assets/icons/b_class_car.svg" class="car" alt="#" />
+            <img src="/src/assets/icons/b_class_car.svg" class="car xl:hidden" alt="#">
+            <img src="/src/assets/icons/b_classxl.svg" class="hidden xl:block" alt="#">
 
             <button
-              class="button border-[#E0E0E0] border-[2px] px-[22px] py-[12px] rounded-lg text-[14px] text-[#1B1B35] font-medium cursor-pointer"
+              class="button border-[#E0E0E0] border-[2px] px-[22px] py-[12px] rounded-lg text-[14px] text-[#1B1B35] font-medium cursor-pointer xl:px-[200px] xl:text-[18px]"
             >
               Kursni tanlash
             </button>
@@ -59,11 +63,12 @@
             :class="isOylik ? ' gap-[31px]' : 'gap-4'"
           >
             <h1
-              class="bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[7px] px-[8px]"
+              class="bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[7px] px-[8px]
+              xl:text-[40px] xl:px-[22px] xl:py-[6px]"
             >
               BC
             </h1>
-            <p class="text-[#1B1B35] text-[22px] font-semibold" v-if="isNaqd">
+            <p class="text-[#1B1B35] text-[22px] font-semibold xl:text-[34px]" v-if="isNaqd">
               3 500 000
             </p>
             <p
@@ -72,12 +77,13 @@
             >
               Boshlangich o'qish summasi 1 000 000, oq'ish davomiyligi 6 oy
             </p>
-            <div class="images flex gap-1">
+            <div class="images flex gap-1 xl:hidden">
               <img src="/src/assets/icons/bc_class_car.svg" alt="#" />
               <img src="/src/assets/icons/b_class_car_sm.svg" alt="#" />
             </div>
+            <img src="/src/assets/icons/bc_classxl.png" class="hidden xl:block" alt="">
             <button
-              class="border-[#E0E0E0] border-[2px] px-[22px] py-[12px] rounded-lg text-[14px] text-[#1B1B35] font-medium cursor-pointer"
+              class="border-[#E0E0E0] border-[2px] px-[22px] py-[12px] rounded-lg text-[14px] text-[#1B1B35] font-medium cursor-pointer xl:px-[200px] xl:text-[18px]"
             >
               Kursni tanlash
             </button>
@@ -86,14 +92,15 @@
         <div class="cardLevel2 flex items-center justify-center gap-3">
           <div
             class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg p-[7px] sm:p-[15px]"
-            :class="isOylik ? ' gap-[31px]' : 'gap-4'"
+            :class="isOylik ? ' gap-[31px]' : 'gap-[15px]'"
           >
             <h1
-              class="bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[4px] px-[15px]"
+              class="bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[4px] px-[15px]
+              xl:text-[40px] xl:px-[22px] xl:py-[6px]"
             >
               C
             </h1>
-            <p class="text-[#1B1B35] text-[22px] font-semibold" v-if="isNaqd">
+            <p class="text-[#1B1B35] text-[22px] font-semibold xl:text-[34px]" v-if="isNaqd">
               1 300 000
             </p>
             <p
@@ -102,9 +109,10 @@
             >
               Boshlangich o'qish summasi 45%, o'qish davomiyligi 3 oy
             </p>
-            <img src="/src/assets/icons/c_class_car.svg" alt="#" />
+            <img src="/src/assets/icons/c_class_car.svg" class="xl:hidden" alt="#" />
+            <img src="/src/assets/icons/c_classxl.svg" class="hidden xl:block" alt="#">
             <button
-              class="border-[#E0E0E0] border-[2px] px-[22px] py-[12px] rounded-lg text-[14px] text-[#1B1B35] font-medium cursor-pointer"
+              class="border-[#E0E0E0] border-[2px] px-[22px] py-[12px] rounded-lg text-[14px] text-[#1B1B35] font-medium cursor-pointer xl:px-[100px] xl:text-[18px]"
             >
               Kursni tanlash
             </button>
@@ -114,11 +122,12 @@
             :class="isOylik ? ' gap-[29px]' : 'gap-[15px]'"
           >
             <h1
-              class="bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[7px] px-[16px]"
+              class="bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[7px] px-[16px]
+              xl:text-[40px] xl:px-[22px] xl:py-[6px]"
             >
               D
             </h1>
-            <p class="text-[#1B1B35] text-[22px] font-semibold" v-if="isNaqd">
+            <p class="text-[#1B1B35] text-[22px] font-semibold xl:text-[34px]" v-if="isNaqd">
               3 100 000
             </p>
             <p
@@ -127,16 +136,43 @@
             >
               Boshlangich o'qish summasi 45%, o'qish davomiyligi 3 oy
             </p>
-            <img src="/src/assets/icons/d_class_car.svg" alt="#" />
+            <img src="/src/assets/icons/d_class_car.svg" class="xl:hidden" alt="#" />
+            <img src="/src/assets/icons/d_classxl.svg" class="hidden xl:block" alt="#">
             <button
-              class="border-[#E0E0E0] border-[2px] px-[22px] py-[12px] rounded-lg text-[14px] text-[#1B1B35] font-medium cursor-pointer"
+              class="border-[#E0E0E0] border-[2px] px-[22px] py-[12px] rounded-lg text-[14px] text-[#1B1B35] font-medium cursor-pointer xl:px-[110px] xl:text-[18px]"
             >
               Kursni tanlash
             </button>
           </div>
+          <div
+            class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg  p-[7px] sm:p-[15px]"
+            :class="isOylik ? ' gap-[35px]' : 'gap-[15px]'"
+          >
+            <h1
+              class="bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[4px] px-[15px] hover:text-[white] xl:text-[40px] xl:px-[22px] xl:py-[6px]"
+            >
+              E
+            </h1>
+            <p class="text-[#1B1B35] text-[22px] font-semibold xl:text-[34px]" v-if="isNaqd">
+              1 500 000
+            </p>
+            <p
+              class="w-[170px] text-center text-[14px] text-[#808080]"
+              v-if="isOylik"
+            >
+              50% dan 2 oy, o'qish davomiyligi 2 oy
+            </p>
+            <img src="/src/assets/icons/e_class_car.svg" class="xl:hidden" alt="#" />
+            <img src="/src/assets/icons/e_classxl.svg" class="hidden xl:block" alt="#">
+            <button
+              class="border-[#E0E0E0] border-[2px] px-[24px] py-[12px] rounded-lg text-[14px] text-[#1B1B35] font-medium cursor-pointer xl:px-[110px] xl:text-[18px]"
+            >
+              <p class="">Kursni tanlash</p>
+            </button>
+          </div>
         </div>
         <div
-          class="cardLevel3 flex items-center justify-center pt-[12px] w-[330px]"
+          class="cardLevel3 flex items-center justify-center pt-[12px] w-[330px] xl:hidden"
         >
           <div
             class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg gap-4 p-[7px] sm:p-[15px]"
@@ -219,6 +255,29 @@ export default {
   padding: 6px 12px;
   width: 150px;
   transition: 0.3s;
+}
+
+@media screen and (min-width: 1280px) {
+  .active {
+  background: #ffffff;
+  padding: 7px 13px;
+  box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.04),
+    0px 3px 8px 0px rgba(0, 0, 0, 0.12);
+  border: 0.5px solid rgba(40, 41, 49, 0.04);
+  border-radius: 6px;
+  width: 150px;
+  text-align: center;
+  color: #407bff;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.deactivated {
+  text-align: center;
+  padding: 7px 13px;
+  width: 150px;
+  transition: 0.3s;
+}
 }
 
 /* .card:hover .h1,
