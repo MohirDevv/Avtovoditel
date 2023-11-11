@@ -145,7 +145,7 @@
             </button>
           </div>
           <div
-            class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg  p-[7px] sm:p-[15px]"
+            class="card bg-[#FFFFFF] border-[#E0E0E0] border xl:flex items-center justify-center flex-col rounded-lg  p-[7px] sm:p-[15px] hidden"
             :class="isOylik ? ' gap-[35px]' : 'gap-[15px]'"
           >
             <h1
