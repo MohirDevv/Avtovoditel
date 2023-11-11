@@ -3,7 +3,7 @@
     <iframe
       src="https://yandex.com/map-widget/v1/?um=constructor%3A73748008eefd2cd0fdbedc588dbba1ae0eb1b1736568efbd69d5a4b876414713&amp;source=constructor"
       width="100%"
-      height="500"
+      height="620"
       frameborder="0"
       class="z-10"
       v-if="isDefault"
@@ -174,7 +174,7 @@
         class="scroll relative z-50 block top-[-897.5px] left-[-100%]"
       >
         <div
-          class="w-[330px] bg-white rounded-[8px] border-[1px] border-[#EAEAEA] absolute top-[472px] left-[-15.5px] p-[10px] overflow-auto h-[400px]"
+          class="w-[330px] bg-white rounded-[8px] border-[1px] border-[#EAEAEA] absolute top-[461px] left-[-15.5px] p-[10px] overflow-auto h-[400px] "
         >
           <div>
             <!-- <h1 class="text-[32px] font-bold mb-[20px]">Filiallar</h1> -->
