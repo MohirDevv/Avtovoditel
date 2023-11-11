@@ -1,13 +1,13 @@
 <template>
-  <div class="container bg-[url('/src/assets/images/mobile/text_bg.png')] bg-cover bg-no-repeat py-[50px]">
+  <div class="container bg-[#5277F7] bg-cover bg-no-repeat py-[50px] xl:py-[110px] relative overflow-x-hidden">
     <div class="wrapper">
       <div class="entrText flex items-center justify-center flex-col text-center">
-        <h1 class="text-white text-[24px] font-bold">AVTOVODITEL</h1>
-        <h2 class="text-white text-[24px] font-semibold">avtomaktabiga xush kelibsiz!</h2>
-        <p class="max-w-[335px] text-white text-[14px] font-medium leading-5 pt-[10px]">Bizning haydovchilik maktabimizga xush kelibsiz, barcha yoshdagi shaxslarga yuqori sifatli va keng qamrovli haydovchilik ta'limini taqdim etishga intilamiz. Bizda sizning maxsus ehtiyojlaringiz va maqsadlaringizga moslashtirilgan dasturlar mavjud.</p>
+        <h1 class="text-white text-[24px] font-bold xl:text-[40px]">AVTOVODITEL</h1>
+        <h2 class="text-white text-[24px] xl:text-[40px] font-semibold">avtomaktabiga xush kelibsiz!</h2>
+        <p class="max-w-[335px] xl:max-w-[700px] text-white text-[14px] xl:text-[18px] font-medium leading-5 pt-[10px]">Bizning haydovchilik maktabimizga xush kelibsiz, barcha yoshdagi shaxslarga yuqori sifatli va keng qamrovli haydovchilik ta'limini taqdim etishga intilamiz. Bizda sizning maxsus ehtiyojlaringiz va maqsadlaringizga moslashtirilgan dasturlar mavjud.</p>
       </div>
-      <div class="iconsInfo pt-[40px]">
-        <div class="level1 flex items-center justify-center gap-[110px] pb-[40px]">
+      <div class="iconsInfo pt-[40px] xl:flex xl:items-center xl:justify-center xl:gap-[100px]">
+        <div class="level1 flex items-center justify-center gap-[110px] pb-[40px] xl:pb-0">
           <div class="first flex items-start justify-center flex-col">
             <img src="/src/assets/icons/bigger_home.svg" class="bg-[#ffffff] bg-opacity-10 p-[8px] rounded-[50px]" alt="#">
             <h3 class="text-white text-[40px] font-semibold">10+</h3>
@@ -33,6 +33,12 @@
         </div>
       </div>
     </div>
+    <img src="/src/assets/icons/bubble.svg" class="absolute top-10 w-[300px] hidden xl:block" alt="#">
+    <img src="/src/assets/icons/bubble.svg" class="absolute top-[275px] left-[30px] w-[90px] hidden xl:block" alt="#">
+    <img src="/src/assets/icons/bubble.svg" class="absolute top-[275px] -right-[80px] w-[200px] hidden xl:block" alt="#">
+    <img src="/src/assets/icons/bubble.svg" class="absolute top-[250px] right-[40px] w-[90px] hidden xl:block " alt="#">
+    <img src="/src/assets/icons/bubble.svg" class="absolute top-[20px] left-[100px] w-[60px] block xl:hidden" alt="#">
+    <img src="/src/assets/icons/bubble.svg" class="absolute top-[30px] -left-[30px] w-[200px] block xl:hidden" alt="#">
   </div>
 </template>
 

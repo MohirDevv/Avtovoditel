@@ -1,10 +1,12 @@
 <template>
-  <div class="container bg-white py-[50px]">
+  <div class="container bg-white py-[50px] xl:py-[150px]">
     <div class="wrapper flex items-center justify-center flex-col">
       <h1 class="text-[#1B1B35] text-[24px] font-bold pb-[30px] animated-text">
         TA'LIM BOSQICHLARI
       </h1>
-      <div class="iconsAnim flex items-center justify-center flex-col">
+      <div
+        class="iconsAnim flex items-center justify-center flex-col xl:hidden"
+      >
         <div class="level1 flex items-center justify-center">
           <div class="lamp flex items-center justify-center flex-col gap-[5px]">
             <img src="/src/assets/icons/lamp.svg" alt="#" />
@@ -34,10 +36,10 @@
           </div>
         </div>
         <div
-          class="text-[#E0E0E0] text-[30px] flex items-end justify-end mt-[30px] ml-[230px] rotate-90"
+          class="text-[#E0E0E0] text-[30px] flex items-end justify-end mt-[35px] ml-[230px] rotate-90"
           :class="{ line2: isVisible }"
         >
-          - - - -
+          - - - - - -
         </div>
         <div class="level1 flex items-center justify-center mt-[35px]">
           <div class="lamp flex items-center justify-center flex-col gap-[5px]">
@@ -68,6 +70,72 @@
           </div>
         </div>
       </div>
+      <div
+        class="iconsAnim1 hidden xl:flex items-center justify-center flex-col xl:flex-row"
+      >
+        <div class="level1 flex items-center justify-center">
+          <div class="lamp flex items-center justify-center flex-col gap-[5px]">
+            <img src="/src/assets/icons/lamp.svg" alt="#" />
+            <img
+              src="/src/assets/icons/right-arrow.svg"
+              class="bg-[#407BFF] p-[8px] rounded-[50px]"
+              alt="#"
+            />
+            <p class="text-[#1B1B35] text-[18px]">Nazariy kurs</p>
+          </div>
+          <div
+            class="text-[#E0E0E0] text-[30px] mt-[20px] xl:mt-[15px]"
+            id="animated"
+            :class="{ line1: isVisible }"
+          >
+            - - - - - - - - -
+          </div>
+          <div class="lamp flex items-center justify-center flex-col gap-[5px]">
+            <img src="/src/assets/icons/triogonometry.svg" alt="#" />
+            <img
+              src="/src/assets/icons/down-arrow.svg"
+              class="bg-[#E0E0E0] p-[8px] rounded-[50px] xl:-rotate-90"
+              :class="{ downArrow: isVisible }"
+              alt="#"
+            />
+            <p class="text-[#1B1B35] text-[18px]">Amaliy kurs</p>
+          </div>
+        </div>
+        <div
+          class="text-[#E0E0E0] text-[30px] flex items-end justify-end mt-[35px] xl:mt-[15px] ml-[230px] xl:ml-[0] rotate-90 xl:rotate-0"
+          :class="{ line2: isVisible }"
+        >
+        - - - - - - - - -
+        </div>
+        <div class="level1 flex items-center justify-center mt-[35px] xl:mt-0">
+          <div class="lamp flex items-center justify-center flex-col gap-[5px]">
+            <img src="/src/assets/icons/nurce.svg" alt="#" />
+            <img
+              src="/src/assets/icons/left-arrow.svg"
+              class="bg-[#E0E0E0] p-[8px] rounded-[50px] xl:rotate-180"
+              alt="#"
+              :class="{ done: isVisible }"
+            />
+            <p class="text-[#1B1B35] text-[18px]">YHXX imtihoni</p>
+          </div>
+          <div
+            class="text-[#E0E0E0] text-[30px] mt-[20px] xl:mt-[15px]"
+            :class="{ line3: isVisible }"
+          >
+          - - - - - - - - -
+          </div>
+          <div class="lamp flex items-center justify-center flex-col gap-[5px]">
+            <img src="/src/assets/icons/done_job.svg" alt="#" />
+            <img
+              src="/src/assets/icons/check-circle.svg"
+              class="bg-[#E0E0E0] p-[8px] rounded-[50px]"
+              alt="#"
+              :class="{ leftArrow: isVisible }"
+            />
+            <p class="text-[#1B1B35] text-[18px]">Ichki imtihon</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -90,6 +158,7 @@ export default {
   methods: {
     isElementInViewport() {
       const el = document.getElementById("animated");
+      const el1 = document.getElementById("animated1");
       if (!el) return;
 
       var rect = el.getBoundingClientRect();
