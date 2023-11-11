@@ -5,21 +5,39 @@
         Sertifikatlar
       </h1>
       <div class="sertificates border-none">
-        <div class="sertificate1">
+        <div class="sertificate1 relative">
           <img
             src="/src/assets/images/mobile/sertificate1.png"
             class="w-[330px]"
             alt="#"
-            @click="isOpen = true"
           />
+          <div
+            class="backg m-auto w-[300px] h-[370px] hover:bg-[black] hover:bg-opacity-[50%] absolute inset-0 transition-all rounded"
+            @click="isOpen = true"
+          >
+            <img
+              src="/src/assets/icons/focus.svg"
+              class="absolute top-[45%] right-[40%]"
+              alt="#"
+            />
+          </div>
         </div>
-        <div class="sertificate2">
+        <div class="sertificate2 relative">
           <img
             src="/src/assets/images/mobile/sercificate2.png"
             class="w-[330px]"
             alt="#"
-            @click="isSecondOpen = true"
           />
+          <div
+            class="backg m-auto w-[300px] h-[370px] hover:bg-[black] hover:bg-opacity-[50%] absolute inset-0 transition-all rounded"
+            @click="isSecondOpen = true"
+          >
+            <img
+              src="/src/assets/icons/focus.svg"
+              class="absolute top-[45%] right-[40%]"
+              alt="#"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -31,7 +49,7 @@
         class="fixed inset-0 top-0 left-0 bottom-0 bg-[#00000099] z-[1]"
       ></div>
       <div
-        class="fixed modal top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center flex-col z-[2] bg-white  rounded-xl w-[330px]"
+        class="fixed modal top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center flex-col z-[2] bg-white rounded-xl w-[330px]"
         v-if="isOpen"
       >
         <button
@@ -41,10 +59,10 @@
           <img src="/src/assets/icons/remove.svg" alt="plus" />
         </button>
         <img
-            src="/src/assets/images/mobile/sertificate1.png"
-            class="w-[330px]"
-            alt="#"
-          />
+          src="/src/assets/images/mobile/sertificate1.png"
+          class="w-[330px]"
+          alt="#"
+        />
       </div>
     </div>
   </teleport>
@@ -55,7 +73,7 @@
         class="fixed inset-0 top-0 left-0 bottom-0 bg-[#00000099] z-[1]"
       ></div>
       <div
-        class="fixed modal top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center flex-col z-[2] bg-white  rounded-xl w-[330px]"
+        class="fixed modal top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center flex-col z-[2] bg-white rounded-xl w-[330px]"
         v-if="isSecondOpen"
       >
         <button
@@ -65,10 +83,10 @@
           <img src="/src/assets/icons/remove.svg" alt="plus" />
         </button>
         <img
-            src="/src/assets/images/mobile/sercificate2.png"
-            class="w-[330px]"
-            alt="#"
-          />
+          src="/src/assets/images/mobile/sercificate2.png"
+          class="w-[330px]"
+          alt="#"
+        />
       </div>
     </div>
   </teleport>
@@ -77,11 +95,11 @@
 <script>
 export default {
   data() {
-    return{
+    return {
       isOpen: false,
       isSecondOpen: false,
-    }
-  }
+    };
+  },
 };
 </script>
 

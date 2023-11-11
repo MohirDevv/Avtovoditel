@@ -3,7 +3,7 @@
     <iframe
       src="https://yandex.com/map-widget/v1/?um=constructor%3A73748008eefd2cd0fdbedc588dbba1ae0eb1b1736568efbd69d5a4b876414713&amp;source=constructor"
       width="100%"
-      height="620"
+      height="500"
       frameborder="0"
       class="z-10"
       v-if="isDefault"
