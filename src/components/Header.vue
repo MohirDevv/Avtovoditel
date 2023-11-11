@@ -180,10 +180,10 @@
     <div class="" v-if="isOpen">
       <div
         @click="isOpen = false"
-        class="fixed inset-0 top-0 left-0 bottom-0 bg-[#00000099] z-[1]"
+        class="fixed inset-0 top-0 left-0 bottom-0 bg-[#00000099] z-[9999]"
       ></div>
       <div
-        class="fixed modal top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center flex-col z-[2] bg-white p-[20px] rounded-xl"
+        class="fixed modal top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center flex-col z-[99999] bg-white p-[20px] rounded-xl"
         v-if="isOpen"
       >
         <button
