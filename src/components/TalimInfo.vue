@@ -19,7 +19,7 @@
           </div>
           <div
             class="text-[#E0E0E0] text-[30px] mt-[20px]"
-            id="animated"
+            id="animated1"
             :class="{ line1: isVisible }"
           >
             - - - - - -
@@ -105,7 +105,7 @@
           class="text-[#E0E0E0] text-[30px] flex items-end justify-end mt-[35px] xl:mt-[15px] ml-[230px] xl:ml-[0] rotate-90 xl:rotate-0"
           :class="{ line2: isVisible }"
         >
-        - - - - - - - - -
+          - - - - - - - - -
         </div>
         <div class="level1 flex items-center justify-center mt-[35px] xl:mt-0">
           <div class="lamp flex items-center justify-center flex-col gap-[5px]">
@@ -122,7 +122,7 @@
             class="text-[#E0E0E0] text-[30px] mt-[20px] xl:mt-[15px]"
             :class="{ line3: isVisible }"
           >
-          - - - - - - - - -
+            - - - - - - - - -
           </div>
           <div class="lamp flex items-center justify-center flex-col gap-[5px]">
             <img src="/src/assets/icons/done_job.svg" alt="#" />
@@ -159,16 +159,23 @@ export default {
     isElementInViewport() {
       const el = document.getElementById("animated");
       const el1 = document.getElementById("animated1");
-      if (!el) return;
+      if (!el || !el1) return;
 
       var rect = el.getBoundingClientRect();
+      var rect1 = el1.getBoundingClientRect();
 
       return (
         rect.top >= 0 &&
+        rect1.top >= 0 &&
         rect.left >= 0 &&
+        rect1.left >= 0 &&
         rect.bottom <=
           (window.innerHeight || document.documentElement.clientHeight) &&
+        rect1.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight) &&
         rect.right <=
+          (window.innerWidth || document.documentElement.clientWidth) &&
+        rect1.right <=
           (window.innerWidth || document.documentElement.clientWidth)
       );
     },
