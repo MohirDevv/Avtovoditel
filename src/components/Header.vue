@@ -11,8 +11,16 @@
         <div
           class="entrImage flex items-start justify-start relative pb-[10px] xl:pb-[62px] xl:pt-[20px]"
         >
-          <img src="../assets/icons/avtovoditel_icon.svg" class="hidden xl:block" alt="#" />
-          <img src="/src/assets/icons/car+symbol.svg" class="block xl:hidden" alt="">
+          <img
+            src="../assets/icons/avtovoditel_icon.svg"
+            class="hidden xl:block"
+            alt="#"
+          />
+          <img
+            src="/src/assets/icons/car+symbol.svg"
+            class="block xl:hidden"
+            alt=""
+          />
           <img
             src="/src/assets/icons/last-symbol.png"
             class="absolute -top-5 -right-12 xl:hidden"
@@ -121,7 +129,11 @@
         </div>
       </div>
       <div class="bigcar hidden xl:flex absolute bottom-0 right-0">
-        <img src="/src/assets/icons/xlcar.svg" class="w-[350px] 2xl:w-[500px]" alt="#" />
+        <img
+          src="/src/assets/icons/xlcar.svg"
+          class="w-[350px] 2xl:w-[500px]"
+          alt="#"
+        />
       </div>
       <h3
         class="w-[100%] max-w-[100%] text-[13px] text-center text-[#D8E1FF] font-medium bg-[#D2E0FF1A] py-[10px] xl:hidden"
@@ -150,6 +162,18 @@
     >
       Xonalarimiz eshiklari siz uchun ochiq
     </p>
+    <div
+      id="pagetop"
+      class="fixed right-[10px] bottom-[10px] xl:right-[20px] xl:bottom-[20px] z-[999] transition-all"
+      v-show="scY > 300"
+      @click="toTop"
+    >
+      <img
+        src="/src/assets/icons/cheron-upwh.svg"
+        class="bg-[#407BFF] rounded-xl p-1 xl:p-3"
+        alt="#"
+      />
+    </div>
   </div>
 
   <teleport to="body">
@@ -205,23 +229,40 @@ export default {
   data() {
     return {
       isOpen: false,
+      scTimer: 0,
+      scY: 0,
     };
   },
   mounted() {
     setTimeout(() => {
       this.isOpen = true;
     }, 3000);
+    window.addEventListener("scroll", this.handleScroll);
   },
-  methods: {},
+  methods: {
+    handleScroll: function () {
+      if (this.scTimer) return;
+      this.scTimer = setTimeout(() => {
+        this.scY = window.scrollY;
+        clearTimeout(this.scTimer);
+        this.scTimer = 0;
+      }, 100);
+    },
+    toTop: function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    },
+  },
 };
 </script>
 
 <style scoped>
-
-.wrapper{
+.wrapper {
   max-width: 1980px;
 }
-.paragc{
+.paragc {
   top: 0%;
   left: 50%;
   transform: translate(-50%, 0%);
@@ -230,6 +271,12 @@ export default {
   animation: fadeIn 0.7s;
   transition: 2s;
 }
+
+#pagetop {
+  animation: fadeIn 0.7s;
+  transition: 2s;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
