@@ -9,7 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.6.1",
     "vue": "^3.3.4",
+    "vue-axios": "^3.5.2",
     "vue-yandex-maps": "^0.11.17",
     "ymaps": "^0.2.1"
   },

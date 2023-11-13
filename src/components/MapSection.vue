@@ -1,7 +1,7 @@
 <template>
   <div class="container relative">
     <iframe
-      src="https://yandex.com/map-widget/v1/?um=constructor%3A73748008eefd2cd0fdbedc588dbba1ae0eb1b1736568efbd69d5a4b876414713&amp;source=constructor"
+      src="https://yandex.ru/map-widget/v1/?um=constructor%3A5b1cf91b6fee826f3e2d98db3bda0436463645637cef8a79be870bae5cfe0782&amp;source=constructor"
       width="100%"
       height="500"
       frameborder="0"
@@ -340,13 +340,9 @@
     <div
       class="xl:flex z-40 items-center justify-between w-[full] rounded-[6px] border-[1px] border-[#EAEAEA] relative top-[-72px] left-0 mx-[20px] hidden"
     >
-
-      <div
-        class="scroll z-10 block"
-      >
+      <div class="scroll z-10 block">
         <div
-          class="w-[550px] bg-white rounded-[8px] border-[1px] border-[#EAEAEA] absolute bottom-[-40px] 
-          left-[10px] p-[30px]"
+          class="w-[550px] bg-white rounded-[8px] border-[1px] border-[#EAEAEA] absolute bottom-[-40px] left-[10px] p-[30px]"
         >
           <div>
             <h1 class="text-[32px] font-bold">Filiallar</h1>
@@ -548,9 +544,8 @@ export default {
 }
 
 @media screen and (min-width: 1280px) {
-  iframe{
+  iframe {
     height: 862px;
   }
 }
-
 </style>

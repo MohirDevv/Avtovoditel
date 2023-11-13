@@ -4,15 +4,16 @@
       <h1 class="m-auto pb-[30px] text-[24px] text-[#1B1B35] font-bold xl:text-[40px]">
         Sertifikatlar
       </h1>
-      <div class="sertificates border-none xl:flex">
+      <div class="sertificates items-center justify-center border-none xl:flex">
         <div class="sertificate1 relative">
           <img
             src="/src/assets/images/mobile/sertificate1.png"
-            class="w-[330px]"
+            class="w-[330px] xl:hidden"
             alt="#"
           />
+          <img src="/src/assets/images/desktop/xl_sertification2.png" class="hidden xl:block" alt="#">
           <div
-            class="backg m-auto w-[300px] h-[370px] hover:bg-[black] hover:bg-opacity-[50%] absolute inset-0 transition-all rounded "
+            class="backg m-auto w-[300px] h-[370px] hover:bg-[black] hover:bg-opacity-[50%] absolute inset-0 transition-all rounded xl:hidden"
             @click="isOpen = true"
           >
             <img
@@ -25,11 +26,12 @@
         <div class="sertificate2 relative">
           <img
             src="/src/assets/images/mobile/sercificate2.png"
-            class="w-[330px]"
+            class="w-[330px] xl:hidden"
             alt="#"
           />
+          <img src="/src/assets/images/desktop/xl_sertification.png" class="w-[556px] rounded-xl hidden xl:block" alt="#">
           <div
-            class="backg m-auto w-[300px] h-[370px] hover:bg-[black] hover:bg-opacity-[50%] absolute inset-0 transition-all rounded"
+            class="backg m-auto w-[300px] h-[370px] hover:bg-[black] hover:bg-opacity-[50%] absolute inset-0 transition-all rounded xl:hidden"
             @click="isSecondOpen = true"
           >
             <img

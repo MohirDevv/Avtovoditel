@@ -61,7 +61,7 @@
             <p
               class="text-white text-[16px] xl:text-[20px] xl:font-medium font-semibold"
             >
-              XX yillik tajriba
+              10 yillik tajriba
             </p>
           </div>
           <div class="second xl:flex xl:items-center xl:gap-[15px]">
