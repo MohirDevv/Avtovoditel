@@ -87,6 +87,7 @@
 
             <button
               class="button border-[#E0E0E0] border-[2px] px-[22px] py-[12px] rounded-lg text-[14px] text-[#1B1B35] font-medium cursor-pointer xl:px-[200px] xl:text-[18px]"
+              v-on:click="onSelect('b')"
             >
               Kursni tanlash
             </button>
@@ -123,12 +124,15 @@
             />
             <button
               class="button border-[#E0E0E0] border-[2px] px-[22px] py-[12px] rounded-lg text-[14px] text-[#1B1B35] font-medium cursor-pointer xl:px-[200px] xl:text-[18px]"
+              v-on:click="onSelect('bc')"
             >
               Kursni tanlash
             </button>
           </div>
         </div>
-        <div class="cardLevel2 flex items-center justify-center gap-3 xl:pt-[12px]">
+        <div
+          class="cardLevel2 flex items-center justify-center gap-3 xl:pt-[12px]"
+        >
           <div
             class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg p-[7px] sm:p-[15px]"
             :class="isOylik ? ' gap-[29px]' : 'gap-[15px]'"
@@ -162,6 +166,7 @@
             />
             <button
               class="button border-[#E0E0E0] border-[2px] px-[22px] py-[12px] rounded-lg text-[14px] text-[#1B1B35] font-medium cursor-pointer xl:px-[100px] xl:text-[18px]"
+              v-on:click="onSelect('c')"
             >
               Kursni tanlash
             </button>
@@ -199,6 +204,7 @@
             />
             <button
               class="button border-[#E0E0E0] border-[2px] px-[22px] py-[12px] rounded-lg text-[14px] text-[#1B1B35] font-medium cursor-pointer xl:px-[110px] xl:text-[18px]"
+              v-on:click="onSelect('d')"
             >
               Kursni tanlash
             </button>
@@ -236,6 +242,7 @@
             />
             <button
               class="button border-[#E0E0E0] border-[2px] px-[24px] py-[12px] rounded-lg text-[14px] text-[#1B1B35] font-medium cursor-pointer xl:px-[110px] xl:text-[18px]"
+              v-on:click="onSelect('e')"
             >
               <p class="">Kursni tanlash</p>
             </button>
@@ -264,6 +271,7 @@
             <img src="/src/assets/icons/e_class_car.svg" alt="#" />
             <button
               class="button border-[#E0E0E0] border-[2px] px-[15px] py-[10px] rounded-lg text-[14px] text-[#1B1B35] font-medium cursor-pointer"
+              v-on:click="onSelect('e')"
             >
               <p class="w-[275px]">Kursni tanlash</p>
             </button>
@@ -272,7 +280,7 @@
       </div>
       <button
         class="bg-[#407BFF] rounded-[50px] text-white px-[113px] py-[14px] mb-[20px] hover:bg-[#2C5AC2] transition-all"
-        v-on:click="isOpen = true"
+        v-on:click="onSelect('body')"
       >
         <p class="w-[115px]">Ariza qoldirish</p>
       </button>
@@ -321,7 +329,8 @@
           />
         </form>
         <button
-          class="bg-[#407BFF] rounded-[50px] text-white px-[103px] py-[14px] mb-[10px] hover:bg-[#2C5AC2] transition-all" @click="sendData"
+          class="bg-[#407BFF] rounded-[50px] text-white px-[103px] py-[14px] mb-[10px] hover:bg-[#2C5AC2] transition-all"
+          @click="sendData"
         >
           <p class="w-[115px]">Ariza qoldirish</p>
         </button>
@@ -342,6 +351,7 @@ export default {
       isVAlidName: null,
       phone: null,
       name: null,
+      info1: "",
       isDataSent: false,
     };
   },
@@ -415,6 +425,31 @@ export default {
         this.isVAlidName = true;
       }
     },
+    onSelect(val) {
+      this.isOpen = true;
+      switch (val) {
+        case "e":
+          this.info1 = "Narxlar bloki, E";
+          break;
+        case "d":
+          this.info1 = "Narxlar bloki, D";
+          break;
+        case "c":
+          this.info1 = "Narxlar bloki, C";
+          break;
+        case "bc":
+          this.info1 = "Narxlar bloki, BC";
+          break;
+        case "b":
+          this.info1 = "Narxlar bloki, B";
+          break;
+        case "body":
+          this.info1 = "Narxlar bloki";
+          break;
+        default:
+          break;
+      }
+    },
     onFocus() {
       if (!this.phone) {
         this.phone = "+998 ";
@@ -425,7 +460,9 @@ export default {
         name: this.name,
         phone_number: this.phone.replaceAll("-", "").replaceAll(" ", ""),
         project: "avtovoditel",
+        info: this.info1,
       };
+
       if (
         this.isVAlidName !== true ||
         this.isValidNum !== true ||
@@ -446,6 +483,9 @@ export default {
         this.isDataSent = true;
         setTimeout(() => {
           this.isOpen = false;
+          this.phone = "";
+          this.name = "";
+          this.info1 = "";
         }, 3000);
         setTimeout(() => {
           this.isDataSent = false;
@@ -460,11 +500,15 @@ export default {
             console.log(error);
             if (error) {
               alert("Xato!");
+              this.phone = "";
+              this.name = "";
+              this.info1 = "";
             }
           });
       }
     },
   },
+  mounted() {},
 };
 </script>
 
@@ -494,11 +538,11 @@ export default {
   transition: 0.3s;
 }
 
-.button:hover{
+.button:hover {
   color: #ffffff;
   border: 2px solid #ffffff;
   background: #407bff;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .modal {

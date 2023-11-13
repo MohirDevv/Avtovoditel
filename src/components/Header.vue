@@ -115,7 +115,7 @@
           </h2>
           <button
             class="bg-[#407BFF] xl:bg-[#FFFFFF0D] rounded-[50px] text-white px-[103px] xl:px-0 py-[14px] xl:py-0 mb-[20px] hover:bg-[#2C5AC2] xl:hover:bg-[#FFFFFF0D] transition-all xl:flex xl:gap-3 xl:items-center"
-            v-on:click="isOpen = true"
+            v-on:click="onSelect('main')" 
           >
             <p class="text-[20px] font-medium hidden px-[30px] xl:block">
               Hoziroq ariza qoldiring va 10% chegirmaga ega bo'ling
@@ -203,19 +203,23 @@
             class="border-b-[1px] border-[#E0E0E0] w-[300px] 2xl:mb-[50px] mb-[40px]"
             type="text"
             id="name"
-            name="name"
             placeholder="Ism"
+            v-model="name"
+            @input="formatNameValue()"
           />
           <input
             class="border-b-[1px] border-[#E0E0E0] w-[300px] mb-[50px]"
             type="tel"
-            id="tel"
-            name="tel"
+            id="number"
             placeholder="Raqamingiz"
+            v-model="phone"
+            @focus="onFocus()"
+            @input="formatPhoneNumber()"
           />
         </form>
         <button
           class="bg-[#407BFF] rounded-[50px] text-white px-[103px] py-[14px] mb-[10px] hover:bg-[#2C5AC2] transition-all"
+          @click="sendData"
         >
           <p class="w-[115px]">Ariza qoldirish</p>
         </button>
@@ -225,12 +229,19 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
       isOpen: false,
       scTimer: 0,
       scY: 0,
+      phone: null,
+      name: null,
+      info2: "Pop-up",
+      isValidNumber: null,
+      isValiddName: null,
+      isDataSentHeader: false,
     };
   },
   mounted() {
@@ -254,11 +265,137 @@ export default {
         behavior: "smooth",
       });
     },
+    onSelect(val) {
+      this.isOpen = true;
+      switch (val) {
+        case "main":
+          this.info2 = "Asosiy blok";
+          break;
+        default:
+          break;
+      }
+    },
+    formatPhoneNumber() {
+      const num = document.getElementById("number");
+      let inputValue = this.phone
+        .replace(/\D/g, "")
+        .replace("9", "")
+        .replace("9", "")
+        .replace("8", "");
+
+      if (inputValue.length > 9) {
+        inputValue = inputValue.substring(0, 9);
+      }
+
+      if (inputValue.length <= 2) {
+        this.phone = "+998 " + inputValue;
+        num.classList.add("invalid");
+      } else if (inputValue.length <= 5) {
+        this.phone =
+          "+998 " + inputValue.substring(0, 2) + " " + inputValue.substring(2);
+      } else if (inputValue.length <= 7) {
+        this.phone =
+          "+998 " +
+          inputValue.substring(0, 2) +
+          " " +
+          inputValue.substring(2, 5) +
+          "-" +
+          inputValue.substring(5);
+        num.classList.add("invalid");
+      } else {
+        this.phone =
+          "+998 " +
+          inputValue.substring(0, 2) +
+          " " +
+          inputValue.substring(2, 5) +
+          "-" +
+          inputValue.substring(5, 7) +
+          "-" +
+          inputValue.substring(7, 9);
+        num.classList.add("invalid");
+        this.isValidNumber = false;
+      }
+
+      if (inputValue.length == 9) {
+        num.classList.remove("invalid");
+        this.isValidNumber = true;
+      }
+    },
+    formatNameValue() {
+      const name = document.getElementById("name");
+      let inputValue = this.name;
+      if (inputValue.length == 0) {
+        name.classList.add("invalid");
+        this.isValiddName = false;
+      } else if (inputValue.length >= 1) {
+        name.classList.remove("invalid");
+        this.isValiddName = true;
+      }
+    },
+    onFocus() {
+      if (!this.phone) {
+        this.phone = "+998 ";
+      }
+    },
+    sendData() {
+      const body = {
+        name: this.name,
+        phone_number: this.phone.replaceAll("-", "").replaceAll(" ", ""),
+        info: this.info2,
+        project: "avtovoditel",
+      };
+      if (
+        this.isValiddName !== true ||
+        this.isValidNumber !== true ||
+        this.isValiddName == null ||
+        this.isValidNumber == null
+      ) {
+        const name = document.getElementById("name");
+        const num = document.getElementById("number");
+
+        num.classList.add("invalid");
+        name.classList.add("invalid");
+      } else if (this.isValidNumber == true && this.isValiddName == true) {
+        const name = document.getElementById("name");
+        const num = document.getElementById("number");
+
+        num.classList.remove("invalid");
+        name.classList.remove("invalid");
+        this.isDataSentHeadere;
+        setTimeout(() => {
+          this.isOpen = false;
+          this.phone = "";
+          this.name = "";
+        }, 3000);
+        setTimeout(() => {
+          this.isDataSentHeaderse;
+        }, 2000);
+        console.log("success");
+
+        axios
+          .post("https://crm.redapp.uz/api/customer/", body)
+          .then((response) => {
+            console.log(response);
+          })
+          .catch((error) => {
+            console.log(error);
+            if (error) {
+              this.phone = "";
+              this.name = "";
+              alert("Xato!");
+            }
+          });
+      }
+    },
   },
 };
 </script>
 
 <style scoped>
+.invalid {
+  border-bottom: 1px solid rgba(251, 74, 74, 0.4);
+  /* background: rgba(255, 138, 138, 0.1); */
+}
 .wrapper {
   max-width: 1980px;
 }
