@@ -164,7 +164,7 @@
     </p>
     <div
       id="pagetop"
-      class="fixed right-[10px] bottom-[10px] xl:right-[20px] xl:bottom-[20px] z-[999] transition-all"
+      class="fixed right-[10px] bottom-[10px] xl:right-[20px] xl:bottom-[20px] z-[999] transition-all cursor-pointer"
       v-show="scY > 300"
       @click="toTop"
     >
