@@ -94,7 +94,7 @@
           </div>
           <div
             class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg p-[7px] sm:p-[15px]"
-            :class="isOylik ? ' gap-[16.5px]' : 'gap-4'"
+            :class="isOylik ? ' gap-[31px]' : 'gap-4'"
           >
             <h1
               class="bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[7px] px-[8px] xl:text-[40px] xl:px-[22px] xl:py-[6px]"
@@ -135,10 +135,10 @@
         >
           <div
             class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg p-[7px] sm:p-[15px]"
-            :class="isOylik ? ' gap-[29px]' : 'gap-[15px]'"
+            :class="isOylik ? ' gap-[28px]' : 'gap-[15px]'"
           >
             <h1
-              class="bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[4px] px-[15px] xl:text-[40px] xl:px-[22px] xl:py-[6px]"
+              class="bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[5px] px-[15px] xl:text-[40px] xl:px-[22px] xl:py-[6px]"
             >
               C
             </h1>
@@ -173,7 +173,7 @@
           </div>
           <div
             class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg p-[7px] sm:p-[15px]"
-            :class="isOylik ? ' gap-[29px]' : 'gap-[15px]'"
+            :class="isOylik ? ' gap-[27px]' : 'gap-[15px]'"
           >
             <h1
               class="bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[7px] px-[16px] xl:text-[40px] xl:px-[22px] xl:py-[6px]"
