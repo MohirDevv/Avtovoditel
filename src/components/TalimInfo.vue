@@ -116,7 +116,7 @@
               src="/src/assets/icons/check-circle.svg"
               class="bg-[#E0E0E0] p-[8px] rounded-[50px]"
               alt="#"
-              :class="{ done: isVisible }"
+              :class="{ leftArrow: isVisible }"
             />
             <p class="text-[#1B1B35] text-[18px]">YHXX imtihoni</p>
           </div>
@@ -132,7 +132,7 @@
               src="/src/assets/icons/right-arrow.svg"
               class="bg-[#E0E0E0] p-[8px] rounded-[50px]"
               alt="#"
-              :class="{ leftArrow: isVisible }"
+              :class="{ done: isVisible }"
             />
             <p class="text-[#1B1B35] text-[18px]">Ichki imtihon</p>
           </div>

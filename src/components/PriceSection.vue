@@ -342,6 +342,7 @@
 </template>
 
 <script>
+import Swal from "sweetalert2";
 import axios from "axios";
 export default {
   data() {
@@ -482,9 +483,25 @@ export default {
 
         num.classList.remove("invalid");
         name.classList.remove("invalid");
+        this.isOpen = false;
         this.isDataSent = true;
+        if (this.isDataSent == true) {
+          Swal.fire({
+            icon: "success",
+            title: "Arizangiz qabul qilindi",
+            showConfirmButton: false,
+            iconColor: "#407BFF",
+            timer: 2000,
+          });
+        } else {
+          Swal.fire({
+            icon: "warning",
+            title: "Xato!",
+            showConfirmButton: false,
+            timer: 1800,
+          });
+        }
         setTimeout(() => {
-          this.isOpen = false;
           this.phone = "";
           this.name = "";
           this.info1 = "";

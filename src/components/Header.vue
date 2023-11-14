@@ -33,20 +33,20 @@
           >
             Hech qanday qo'rquv va stresslarsiz Mashina haydashni o'rganing!
           </h1>
-          <div
-            class="subbutton text-white flex justify-between border-[#FFFFFF1A] border-b-2 pb-[15px] mb-[20px] xl:gap-[10px] xl:border-none xl:justify-normal"
-          >
-            <p
-              class="w-[190px] xl:w-[660px] xl:flex xl:items-center text-[14px] font-medium bg-[#D2E0FF1A] xl:bg-[#407BFF] xl:text-[19px] xl:font-normal rounded-lg px-[15px] py-[5px]"
+          <div class="xl:pb-[50px] xl:flex pb-[20px]">
+            <div
+              class="rounded-t-[8px] border-b-[1px] border-[#455674] py-[10px] px-[15px] bg-[#323E55] xl:border-none xl:rounded-lg xl:bg-[#407BFF] xl:mr-[10px]"
             >
-              B kategoriyasi uchun boshlang'ich to'lov 1 160 000 so'mdan 0%
-              nasiya
-            </p>
-            <p
-              class="text-[14px] flex items-center justify-center font-medium bg-[#D2E0FF1A] rounded-lg px-[15px] py-[14px] xl:bg-[#407BFF] xl:text-[19px]"
+              <p class="font-medium text-[14px] text-white">
+                B kategoriyasi uchun boshlang'ich to'lov 1 160 000 so'mdan 0%
+                nasiya
+              </p>
+            </div>
+            <div
+              class="rounded-b-[8px] py-[10px] px-[15px] bg-[#323E55] xl:rounded-lg xl:bg-[#407BFF]"
             >
-              Haftada 6 kun
-            </p>
+              <p class="font-medium text-[14px] text-white">Haftada 6 kun</p>
+            </div>
           </div>
         </div>
         <div
@@ -237,6 +237,7 @@
 
 <script>
 import axios from "axios";
+import Swal from "sweetalert2";
 export default {
   data() {
     return {
@@ -368,14 +369,23 @@ export default {
 
         num.classList.remove("invalid");
         name.classList.remove("invalid");
-        this.isDataSentHeadere;
+        this.isOpen = false;
+        this.isDataSentHeader = true;
+        if (this.isDataSentHeader == true) {
+          Swal.fire({
+            icon: "success",
+            title: "Arizangiz qabul qilindi)",
+            showConfirmButton: false,
+            iconColor: "#407BFF",
+            timer: 2000,
+          });
+        }
         setTimeout(() => {
-          this.isOpen = false;
           this.phone = "";
           this.name = "";
-        }, 3000);
+        }, 2000);
         setTimeout(() => {
-          this.isDataSentHeaderse;
+          this.isDataSentHeader = false;
         }, 2000);
         console.log("success");
 
