@@ -1,0 +1,15 @@
+stages:
+  - deploy
+
+deploy_production:
+  stage: deploy
+  script:
+    - rsync -av * /var/www/avtovoditel-front/ --no-perms --no-owner --no-group --omit-dir-times
+    - cd /var/www/avtovoditel-front/ && npm install && npm run build
+    - pm2 restart avtovoditel-front
+  environment:
+    name: production
+    url: https://avtovoditel.uz/
+  only:
+    - master
+
