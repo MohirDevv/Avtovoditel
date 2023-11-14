@@ -44,7 +44,7 @@
               class="bg-[#ffffff] bg-opacity-10 p-[10px] rounded-[50px]"
               alt="#"
             />
-            <h3 class="text-white text-[40px] font-semibold">4500+</h3>
+            <h3 class="text-white text-[40px] font-semibold">9420+</h3>
             <p class="text-[#FFFFFFF2] text-[18px] font-medium">
               Bitiruvchilar soni
             </p>
@@ -57,7 +57,7 @@
               class="bg-[#ffffff] bg-opacity-10 p-[10px] rounded-[50px]"
               alt="#"
             />
-            <h3 class="text-white text-[40px] font-semibold">10 yil</h3>
+            <h3 class="text-white text-[40px] font-semibold">5 yil</h3>
             <p class="text-[#FFFFFFF2] text-[18px] font-medium">
               Faoliyat vaqti
             </p>
@@ -68,7 +68,7 @@
               class="bg-[#ffffff] bg-opacity-10 p-[10px] rounded-[50px]"
               alt="#"
             />
-            <h3 class="text-white text-[40px] font-semibold">24+</h3>
+            <h3 class="text-white text-[40px] font-semibold">50+</h3>
             <p class="text-[#FFFFFFF2] text-[18px] font-medium">
               Mashinalar soni
             </p>

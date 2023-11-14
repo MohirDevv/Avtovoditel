@@ -38,7 +38,7 @@
               class="rounded-t-[8px] border-b-[1px] border-[#455674] py-[10px] px-[15px] bg-[#323E55] xl:border-none xl:rounded-lg xl:bg-[#407BFF] xl:mr-[10px]"
             >
               <p class="font-medium text-[14px] text-white">
-                B kategoriyasi uchun boshlang'ich to'lov 1 160 000 so'mdan 0%
+                B kategoriyasi uchun boshlang'ich to'lov 1 000 000 so'mdan 0%
                 nasiya
               </p>
             </div>
@@ -61,7 +61,7 @@
             <p
               class="text-white text-[16px] xl:text-[20px] xl:font-medium font-semibold"
             >
-              10 yillik tajriba
+              5 yillik tajriba
             </p>
           </div>
           <div class="second xl:flex xl:items-center xl:gap-[15px]">
@@ -101,7 +101,7 @@
             <p
               class="text-white text-[16px] xl:text-[20px] xl:font-medium font-semibold"
             >
-              Toshkent bo'yicha 7 ta fillial
+              Toshkent bo'yicha 10 ta fillial
             </p>
           </div>
         </div>
