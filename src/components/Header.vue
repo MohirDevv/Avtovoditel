@@ -115,7 +115,7 @@
           </h2>
           <button
             class="bg-[#407BFF] xl:bg-[#FFFFFF0D] rounded-[50px] text-white px-[103px] xl:px-0 py-[14px] xl:py-0 mb-[20px] hover:bg-[#2C5AC2] xl:hover:bg-[#FFFFFF0D] transition-all xl:flex xl:gap-3 xl:items-center"
-            v-on:click="onSelect('main')" 
+            v-on:click="onSelect('main')"
           >
             <p class="text-[20px] font-medium hidden px-[30px] xl:block">
               Hoziroq ariza qoldiring va 10% chegirmaga ega bo'ling
@@ -199,23 +199,30 @@
           Biz siz bilan albatta bog'lanamiz
         </p>
         <form class="w-[310px]">
-          <input
-            class="border-b-[1px] border-[#E0E0E0] w-[300px] 2xl:mb-[50px] mb-[40px]"
-            type="text"
-            id="name"
-            placeholder="Ism"
-            v-model="name"
-            @input="formatNameValue()"
-          />
-          <input
-            class="border-b-[1px] border-[#E0E0E0] w-[300px] mb-[50px]"
-            type="tel"
-            id="number"
-            placeholder="Raqamingiz"
-            v-model="phone"
-            @focus="onFocus()"
-            @input="formatPhoneNumber()"
-          />
+          <div class="input-container mt-[20px]">
+            <input
+              class="border-b-[1px] border-[#E0E0E0] w-[300px] 2xl:mb-[50px] mb-[40px]"
+              type="text"
+              id="name"
+              v-model="name"
+              @input="formatNameValue()"
+              required
+            />
+            <label for="name">Ism</label>
+          </div>
+
+          <div class="input-container">
+            <input
+              class="border-b-[1px] border-[#E0E0E0] w-[300px] mb-[50px]"
+              type="tel"
+              id="number"
+              v-model="phone"
+              @focus="onFocus()"
+              @input="formatPhoneNumber()"
+              required
+            />
+            <label for="number">Raqamingiz</label>
+          </div>
         </form>
         <button
           class="bg-[#407BFF] rounded-[50px] text-white px-[103px] py-[14px] mb-[10px] hover:bg-[#2C5AC2] transition-all"
@@ -392,9 +399,28 @@ export default {
 </script>
 
 <style scoped>
+.input-container {
+  position: relative;
+}
+
+label {
+  position: absolute;
+  top: 20%;
+  left: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: 0.3s;
+  color: #bababa;
+}
+
+input:focus + label,
+input:valid + label {
+  top: -10px;
+  font-size: 12px;
+  color: #407bff;
+}
 .invalid {
   border-bottom: 1px solid rgba(251, 74, 74, 0.4);
-  /* background: rgba(255, 138, 138, 0.1); */
 }
 .wrapper {
   max-width: 1980px;

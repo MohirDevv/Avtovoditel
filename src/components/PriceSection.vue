@@ -55,11 +55,6 @@
               class="car xl:hidden"
               alt="#"
             />
-            <!-- <img
-              src="/src/assets/icons/b_classxl.svg"
-              
-              alt="#"
-            /> -->
             <svg
               width="150"
               height="72"
@@ -252,7 +247,7 @@
           class="cardLevel3 flex items-center justify-center pt-[12px] w-[330px] xl:hidden"
         >
           <div
-            class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg gap-4 p-[7px] sm:p-[15px]"
+            class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg gap-4 p-[7px] sm:p-[24px]"
           >
             <h1
               class="bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[4px] px-[15px]"
@@ -310,23 +305,30 @@
           Biz siz bilan albatta bog'lanamiz
         </p>
         <form class="w-[310px]">
-          <input
-            class="border-b-[1px] border-[#E0E0E0] w-[300px] 2xl:mb-[50px] mb-[40px]"
-            type="text"
-            id="validator_name"
-            placeholder="Ism"
-            v-model="name"
-            @input="formatNameValue()"
-          />
-          <input
-            class="border-b-[1px] border-[#E0E0E0] w-[300px] mb-[50px]"
-            type="tel"
-            id="validator_num"
-            placeholder="Raqamingiz"
-            v-model="phone"
-            @focus="onFocus()"
-            @input="formatPhoneNumber()"
-          />
+          <div class="input-container mt-[20px]">
+            <input
+              class="border-b-[1px] border-[#E0E0E0] w-[300px] 2xl:mb-[50px] mb-[40px]"
+              type="text"
+              id="validator_name"
+              v-model="name"
+              @input="formatNameValue()"
+              required
+            />
+            <label for="validator_name">Ism</label>
+          </div>
+
+          <div class="input-container">
+            <input
+              class="border-b-[1px] border-[#E0E0E0] w-[300px] mb-[50px]"
+              type="tel"
+              id="validator_num"
+              v-model="phone"
+              @focus="onFocus()"
+              @input="formatPhoneNumber()"
+              required
+            />
+            <label for="validator_num">Raqamingiz</label>
+          </div>
         </form>
         <button
           class="bg-[#407BFF] rounded-[50px] text-white px-[103px] py-[14px] mb-[10px] hover:bg-[#2C5AC2] transition-all"
@@ -515,7 +517,6 @@ export default {
 <style scoped>
 .invalid {
   border-bottom: 1px solid rgba(251, 74, 74, 0.4);
-  /* background: rgba(255, 138, 138, 0.1); */
 }
 .active {
   background: #ffffff;
@@ -543,6 +544,27 @@ export default {
   border: 2px solid #ffffff;
   background: #407bff;
   transition: 0.3s;
+}
+
+.input-container {
+  position: relative;
+}
+
+label {
+  position: absolute;
+  top: 20%;
+  left: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: 0.3s;
+  color: #bababa;
+}
+
+input:focus + label,
+input:valid + label {
+  top: -10px;
+  font-size: 12px;
+  color: #407bff;
 }
 
 .modal {
@@ -580,25 +602,4 @@ export default {
     transition: 0.3s;
   }
 }
-
-/* .card:hover .h1,
-.card:hover .mainp,
-.card:hover,
-.card:hover .car,
-.card:hover .button,
-.card:hover .subp {
-  color: white;
-  background: #407bff;
-  transition: .03s;
-}
-.card:hover .h1 {
-  background: rgba(255, 255, 255, 0.1);
-  transition: .03s;
-}
-.card:hover .car {
-  background-color: #407bff;
-  filter: brightness(-0) invert(-11);
-  fill: #ffffff;
-  background: #407bff;
-} */
 </style>

@@ -36,7 +36,7 @@
           </div>
         </div>
         <div
-          class="text-[#E0E0E0] text-[30px] flex items-end justify-end mt-[35px] ml-[230px] rotate-90"
+          class="text-[#E0E0E0] text-[30px] flex items-end justify-end mt-[40px] ml-[230px] rotate-90"
           :class="{ line2: isVisible }"
         >
           - - - - - -
@@ -45,7 +45,7 @@
           <div class="lamp flex items-center justify-center flex-col gap-[5px]">
             <img src="/src/assets/icons/nurce.svg" alt="#" />
             <img
-              src="/src/assets/icons/left-arrow.svg"
+              src="/src/assets/icons/check-circle.svg"
               class="bg-[#E0E0E0] p-[8px] rounded-[50px]"
               alt="#"
               :class="{ leftArrow: isVisible }"
@@ -61,7 +61,7 @@
           <div class="lamp flex items-center justify-center flex-col gap-[5px]">
             <img src="/src/assets/icons/done_job.svg" alt="#" />
             <img
-              src="/src/assets/icons/check-circle.svg"
+              src="/src/assets/icons/left-arrow.svg"
               class="bg-[#E0E0E0] p-[8px] rounded-[50px]"
               alt="#"
               :class="{ done: isVisible }"
@@ -71,7 +71,7 @@
         </div>
       </div>
       <div
-        class="iconsAnim1 hidden xl:flex items-center justify-center flex-col xl:flex-row"
+        class="iconsAnim1 hidden xl:flex items-center justify-center flex-row"
       >
         <div class="level1 flex items-center justify-center">
           <div class="lamp flex items-center justify-center flex-col gap-[5px]">
@@ -107,12 +107,14 @@
         >
           - - - - - - - - -
         </div>
-        <div class="level1 flex items-center justify-center mt-[35px] xl:mt-0">
+        <div
+          class="level1 flex items-center justify-center mt-[35px] xl:mt-0 xl:flex-row-reverse"
+        >
           <div class="lamp flex items-center justify-center flex-col gap-[5px]">
             <img src="/src/assets/icons/nurce.svg" alt="#" />
             <img
-              src="/src/assets/icons/left-arrow.svg"
-              class="bg-[#E0E0E0] p-[8px] rounded-[50px] xl:rotate-180"
+              src="/src/assets/icons/check-circle.svg"
+              class="bg-[#E0E0E0] p-[8px] rounded-[50px]"
               alt="#"
               :class="{ done: isVisible }"
             />
@@ -127,7 +129,7 @@
           <div class="lamp flex items-center justify-center flex-col gap-[5px]">
             <img src="/src/assets/icons/done_job.svg" alt="#" />
             <img
-              src="/src/assets/icons/check-circle.svg"
+              src="/src/assets/icons/right-arrow.svg"
               class="bg-[#E0E0E0] p-[8px] rounded-[50px]"
               alt="#"
               :class="{ leftArrow: isVisible }"
@@ -244,7 +246,7 @@ export default {
   animation: colorChangeLine2 2s;
   color: linear-gradient(to right, #e0e0e0, #407bff);
   animation-fill-mode: forwards;
-  animation-delay: 2s;
+  animation-delay: 1.5s;
 }
 
 @keyframes colorChangeLine2 {
@@ -259,7 +261,7 @@ export default {
 .done {
   animation: colorChangeDown 2s;
   animation-fill-mode: forwards;
-  animation-delay: 3s;
+  animation-delay: 2.5s;
 }
 
 @keyframes colorChangeDown {
@@ -275,7 +277,7 @@ export default {
   animation: colorChangeLine3 2s;
   color: linear-gradient(to right, #e0e0e0, #407bff);
   animation-fill-mode: forwards;
-  animation-delay: 4s;
+  animation-delay: 3.5s;
 }
 
 @keyframes colorChangeLine3 {
@@ -290,8 +292,6 @@ export default {
 .leftArrow {
   animation: colorChangeDown 2s;
   animation-fill-mode: forwards;
-  animation-delay: 5s;
+  animation-delay: 4.5s;
 }
 </style>
-
-<!-- #407BFF blue #E0E0E0 default -->

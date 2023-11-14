@@ -334,9 +334,6 @@
         </div>
       </div>
     </div>
-    <!--  -->
-    <!--  -->
-    <!--  -->
     <div
       class="xl:flex z-40 items-center justify-between w-[full] rounded-[6px] border-[1px] border-[#EAEAEA] relative top-[-72px] left-0 mx-[20px] hidden"
     >

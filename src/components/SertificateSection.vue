@@ -1,7 +1,9 @@
 <template>
   <div class="container pt-[10px] xl:py-[100px]">
     <div class="wrapper flex items-center justify-center flex-col">
-      <h1 class="m-auto pb-[30px] text-[24px] text-[#1B1B35] font-bold xl:text-[40px]">
+      <h1
+        class="m-auto pb-[30px] text-[24px] text-[#1B1B35] font-bold xl:text-[40px]"
+      >
         Sertifikatlar
       </h1>
       <div class="sertificates items-center justify-center border-none xl:flex">
@@ -11,7 +13,11 @@
             class="w-[330px] xl:hidden"
             alt="#"
           />
-          <img src="/src/assets/images/desktop/xl_sertification2.png" class="hidden xl:block" alt="#">
+          <img
+            src="/src/assets/images/desktop/xl_sertification2.png"
+            class="hidden xl:block"
+            alt="#"
+          />
           <div
             class="backg m-auto w-[300px] h-[370px] hover:bg-[black] hover:bg-opacity-[50%] absolute inset-0 transition-all rounded xl:hidden"
             @click="isOpen = true"
@@ -29,7 +35,11 @@
             class="w-[330px] xl:hidden"
             alt="#"
           />
-          <img src="/src/assets/images/desktop/xl_sertification.png" class="w-[556px] rounded-xl hidden xl:block" alt="#">
+          <img
+            src="/src/assets/images/desktop/xl_sertification.png"
+            class="w-[556px] rounded-xl hidden xl:block"
+            alt="#"
+          />
           <div
             class="backg m-auto w-[300px] h-[370px] hover:bg-[black] hover:bg-opacity-[50%] absolute inset-0 transition-all rounded xl:hidden"
             @click="isSecondOpen = true"
@@ -65,7 +75,11 @@
           class="w-[330px] xl:hidden"
           alt="#"
         />
-        <img src="/src/assets/images/desktop/xl_sertification2.png" class="hidden xl:block" alt="#">
+        <img
+          src="/src/assets/images/desktop/xl_sertification2.png"
+          class="hidden xl:block"
+          alt="#"
+        />
       </div>
     </div>
   </teleport>
@@ -90,7 +104,11 @@
           class="w-[330px] xl:hidden"
           alt="#"
         />
-        <img src="/src/assets/images/desktop/xl_sertification.png" class="hidden xl:block" alt="#">
+        <img
+          src="/src/assets/images/desktop/xl_sertification.png"
+          class="hidden xl:block"
+          alt="#"
+        />
       </div>
     </div>
   </teleport>
@@ -108,8 +126,8 @@ export default {
 </script>
 
 <style scoped>
-.backg:hover img{
+.backg:hover img {
   opacity: 1;
-  transition: .3s;
+  transition: 0.3s;
 }
 </style>
