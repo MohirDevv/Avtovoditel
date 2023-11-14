@@ -22,7 +22,7 @@
         </p>
       </div>
       <div
-        class="iconsInfo pt-[40px] xl:flex xl:items-center xl:justify-center xl:gap-[100px]"
+        class="iconsInfo pt-[40px] xl:flex xl:items-start xl:justify-center xl:gap-[100px] xl:ml-[180px]"
       >
         <div
           class="level1 flex items-center justify-center gap-[110px] pb-[40px] xl:pb-0"
@@ -41,16 +41,16 @@
           <div class="first flex items-start justify-center flex-col">
             <img
               src="/src/assets/icons/two_students.svg"
-              class="bg-[#ffffff] bg-opacity-10 p-[10px] rounded-[50px]"
+              class="bg-[#ffffff] bg-opacity-10 p-[10px] rounded-[50px] w-[60px] h-[60px]"
               alt="#"
             />
-            <h3 class="text-white text-[40px] font-semibold">9420+</h3>
+            <h3 class="text-white text-[40px] font-semibold">9420</h3>
             <p class="text-[#FFFFFFF2] text-[18px] font-medium">
               Bitiruvchilar soni
             </p>
           </div>
         </div>
-        <div class="level2 flex items-center justify-center gap-[110px]">
+        <div class="level2 flex items-start justify-center gap-[110px]">
           <div class="first flex items-start justify-center flex-col">
             <img
               src="/src/assets/icons/speed.svg"
@@ -62,15 +62,18 @@
               Faoliyat vaqti
             </p>
           </div>
-          <div class="first flex items-start justify-center flex-col">
+          <div
+            class="first flex items-start justify-center flex-col w-[136px] sm:w-[139px] xl:w-[240px]"
+          >
             <img
               src="/src/assets/icons/car.svg"
               class="bg-[#ffffff] bg-opacity-10 p-[10px] rounded-[50px]"
               alt="#"
             />
             <h3 class="text-white text-[40px] font-semibold">50+</h3>
-            <p class="text-[#FFFFFFF2] text-[18px] font-medium">
-              Mashinalar soni
+            <p class="text-[#FFFFFFF2] text-[18px] font-medium max-w-[240px]">
+              <!-- Mashinalar soni -->
+              Yengil, yuk, avtobus va pritsepli transport vositalari
             </p>
           </div>
         </div>
