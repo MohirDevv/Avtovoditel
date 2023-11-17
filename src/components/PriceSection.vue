@@ -89,7 +89,7 @@
           </div>
           <div
             class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg p-[7px] sm:p-[15px]"
-            :class="isOylik ? ' gap-[31px]' : 'gap-[16.5px]'"
+            :class="isOylik ? 'gap-[31px]  xl:gap-[16.5px]' : 'gap-[16.5px]'"
           >
             <h1
               class="bg-[#E0E0E0] rounded-[50px] text-[24px] text-[#1B1B35] font-medium py-[7px] px-[8px] xl:text-[40px] xl:px-[22px] xl:py-[6px]"
