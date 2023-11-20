@@ -16,7 +16,7 @@
           class="max-w-[335px] xl:max-w-[700px] text-white text-[14px] xl:text-[18px] font-medium leading-5 pt-[10px]"
         >
           Bizning haydovchilik maktabimizga xush kelibsiz, barcha yoshdagi
-          shaxslarga yuqori sifatli va keng qamrovli haydovchilik ta'limini
+          fuqarolar yuqori sifatli va keng qamrovli haydovchilik ta'limini
           taqdim etishga intilamiz. Bizda sizning maxsus ehtiyojlaringiz va
           maqsadlaringizga moslashtirilgan dasturlar mavjud.
         </p>

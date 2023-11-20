@@ -147,7 +147,7 @@
               class="w-[140px] text-center text-[14px] text-[#808080] xl:w-[336px]"
               v-if="isOylik"
             >
-              Boshlangich o'qish summasi 45%, o'qish davomiyligi 3 oy
+              Boshlangich o'qish summasi 45%, o'qish davomiyligi 2 oy
             </p>
             <img
               src="/src/assets/icons/c_class_car.svg"

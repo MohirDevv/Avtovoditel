@@ -45,7 +45,7 @@
             <div
               class="rounded-b-[8px] py-[10px] px-[15px] bg-[#323E55] xl:rounded-lg xl:bg-[#407BFF]"
             >
-              <p class="font-medium text-[14px] text-white">Haftada 6 kun</p>
+              <p class="font-medium text-[14px] text-white">Haftada 3 kun</p>
             </div>
           </div>
         </div>
