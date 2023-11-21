@@ -16,7 +16,7 @@
           >
             <img
               src="../assets/icons/logo.svg"
-              class="w-[55px] h-[55px]"
+              class="w-[55px] h-[55px] xl:w-[80px] xl:h-[80px]"
               alt="#"
             />
             <h1 class="text-white text-[16px] xl:text-[24px] font-extrabold">
@@ -46,14 +46,15 @@
             </div>
           </div>
         </div>
-        <div class="iconsinfo1 flex items-center justify-between xl:justify-normal xl:gap-[30px] pb-[30px] pr-[30px] xl:pr-0"
+        <div
+          class="iconsinfo1 flex items-center justify-between xl:justify-normal xl:gap-[30px] pb-[30px] pr-[30px] xl:pr-0"
         >
           <div class="first xl:flex xl:items-center xl:gap-[15px] xl:pr-[12px]">
-            <img
-              src="/src/assets/icons/calen.svg"
-              class="bg-[#FFFFFF1A] rounded-[50%] p-[8px] mb-[8px]"
-              alt="#"
-            />
+            <div
+              class="img-bg flex items-center justify-center bg-[#FFFFFF1A] rounded-[50%] w-[40px] h-[40px] mb-[8px]"
+            >
+              <img src="/src/assets/icons/calen.svg" class="p-[8px]" alt="#" />
+            </div>
             <p
               class="text-white text-[16px] xl:text-[20px] xl:font-medium font-semibold"
             >
@@ -61,11 +62,15 @@
             </p>
           </div>
           <div class="second xl:flex xl:items-center xl:gap-[15px]">
-            <img
-              src="/src/assets/icons/user_options.svg"
-              class="bg-[#FFFFFF1A] rounded-[50%] p-[8px] mb-[8px]"
-              alt="#"
-            />
+            <div
+              class="img-bg flex items-center justify-center bg-[#FFFFFF1A] rounded-[50%] w-[40px] h-[40px] mb-[8px]"
+            >
+              <img
+                src="/src/assets/icons/user_options.svg"
+                class="p-[8px]"
+                alt="#"
+              />
+            </div>
             <p
               class="text-white text-[16px] xl:text-[20px] xl:font-medium font-semibold"
             >
@@ -77,11 +82,15 @@
           class="iconsinfo2 flex items-center justify-between pb-[20px] xl:justify-normal xl:gap-[40px]"
         >
           <div class="first xl:flex xl:items-center xl:gap-[15px]">
+            <div
+              class="img-bg flex items-center justify-center bg-[#FFFFFF1A] rounded-[50%] w-[40px] h-[40px] mb-[8px]"
+            >
             <img
               src="/src/assets/icons/responsive.svg"
-              class="bg-[#FFFFFF1A] rounded-[50%] p-[8px] mb-[8px]"
+              class="p-[8px]"
               alt="#"
             />
+            </div>
             <p
               class="text-white text-[16px] xl:text-[20px] xl:font-medium font-semibold"
             >
@@ -89,11 +98,15 @@
             </p>
           </div>
           <div class="second xl:flex xl:items-center xl:gap-[15px]">
+            <div
+              class="img-bg flex items-center justify-center bg-[#FFFFFF1A] rounded-[50%] w-[40px] h-[40px] mb-[8px]"
+            >
             <img
               src="/src/assets/icons/home.svg"
-              class="bg-[#FFFFFF1A] rounded-[50%] p-[8px] mb-[8px]"
+              class="p-[8px]"
               alt="#"
             />
+            </div>
             <p
               class="text-white text-[16px] xl:text-[20px] xl:font-medium font-semibold"
             >
@@ -107,11 +120,15 @@
           <div
             class="third xl:flex xl:items-center xl:gap-[15px] justify-center"
           >
+          <div
+              class="img-bg flex items-center justify-center bg-[#FFFFFF1A] rounded-[50%] w-[40px] h-[40px] mb-[8px]"
+            >
             <img
               src="/src/assets/icons/world-wide.svg"
-              class="bg-[#FFFFFF1A] rounded-[50%] p-[8px] w-[40px] h-[40px] mb-0 xl:mb-2"
+              class="p-[8px]"
               alt="#"
             />
+            </div>
             <p
               class="text-white text-[16px] xl:text-[20px] xl:font-medium font-semibold"
             >

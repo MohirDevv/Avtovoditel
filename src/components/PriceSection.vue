@@ -5,21 +5,28 @@
         Narxlarlar
       </h1>
       <div
-        class="priceOption flex items-center justify-center gap-6 mt-[23px] p-[2px] bg-[#F3F3F3] rounded-lg xl:mb-[42px]"
+        class="priceOption flex items-center justify-center gap-2 mt-[23px] p-[2px] bg-[#F3F3F3] rounded-lg xl:mb-[42px] xl:gap-6"
       >
         <h2
-          class="text-[14px] leading-4 cursor-pointer"
+          class="text-[13px] leading-4 cursor-pointer"
           :class="isNaqd ? 'active' : 'deactivated'"
           @click="oylikToNaqd"
         >
           Naqt to'lash
         </h2>
         <h2
-          class="deactivated text-[14px] leading-4 cursor-pointer"
+          class="deactivated text-[13px] leading-4 cursor-pointer"
           :class="isOylik ? 'active' : 'deactivated'"
           @click="naqtToOylik"
         >
           Bo'lib to'lash
+        </h2>
+        <h2
+          class="deactivated text-[13px] leading-4 cursor-pointer"
+          :class="isExt ? 'active' : 'deactivated'"
+          @click="toExt"
+        >
+          Qo'shimcha xizmat
         </h2>
       </div>
       <div
@@ -27,6 +34,7 @@
       >
         <div
           class="cardLevel1 flex items-center justify-center gap-3 pb-[12px]"
+          v-if="isNaqd || isOylik"
         >
           <div
             class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg gap-4 p-[7px] sm:p-[15px]"
@@ -127,6 +135,7 @@
         </div>
         <div
           class="cardLevel2 flex items-center justify-center gap-3 xl:pt-[12px]"
+          v-if="isNaqd || isOylik"
         >
           <div
             class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg p-[7px] sm:p-[15px]"
@@ -245,6 +254,7 @@
         </div>
         <div
           class="cardLevel3 flex items-center justify-center pt-[12px] w-[330px] xl:hidden"
+          v-if="isNaqd || isOylik"
         >
           <div
             class="card bg-[#FFFFFF] border-[#E0E0E0] border flex items-center justify-center flex-col rounded-lg gap-4 p-[7px] sm:p-[24px]"
@@ -269,6 +279,44 @@
               v-on:click="onSelect('e')"
             >
               <p class="w-[275px]">Kursni tanlash</p>
+            </button>
+          </div>
+        </div>
+        <div
+          class="extra-cards flex items-center justify-center flex-col xl:flex-row xl:gap-6"
+          v-if="isExt"
+        >
+          <div
+            class="card1 flex items-center justify-center flex-col border-[#E0E0E0] border rounded-xl p-[25px] gap-[20px]"
+          >
+            <h2
+              class="text-[22px] text-[#1B1B35] font-medium text-center w-[303px] xl:h-[66px]
+               xl:flex xl:items-center xl:justify-center"
+            >
+              Instruktorlar tayyorlash
+            </h2>
+            <h1 class="text-[40px] font-semibold text-[#1B1B35]">600 000</h1>
+            <button
+              class="button border-[#E0E0E0] border-[2px] px-[22px] py-[12px] rounded-lg text-[14px] text-[#1B1B35] font-medium cursor-pointer xl:px-[200px] xl:text-[18px] w-full"
+              v-on:click="onSelect('instructor')"
+            >
+              Kursni tanlash
+            </button>
+          </div>
+          <div
+            class="card2 flex items-center justify-center flex-col border-[#E0E0E0] border rounded-xl p-[25px] gap-[20px] mt-[12px] xl:mt-0"
+          >
+            <h2
+              class="text-[22px] text-[#1B1B35] font-medium text-center w-[303px]"
+            >
+              Xaydovchilarni malakasini oshirish kursi 30 soatlik
+            </h2>
+            <h1 class="text-[40px] font-semibold text-[#1B1B35]">500 000</h1>
+            <button
+              class="button border-[#E0E0E0] border-[2px] px-[22px] py-[12px] rounded-lg text-[14px] text-[#1B1B35] font-medium cursor-pointer xl:px-[200px] xl:text-[18px] w-full"
+              v-on:click="onSelect('malaka-up')"
+            >
+              Kursni tanlash
             </button>
           </div>
         </div>
@@ -349,6 +397,7 @@ export default {
     return {
       isNaqd: true,
       isOylik: false,
+      isExt: false,
       isOpen: false,
       isValidNum: null,
       isVAlidName: null,
@@ -362,6 +411,7 @@ export default {
     naqtToOylik() {
       if ((this.isNaqd = true)) {
         this.isNaqd = false;
+        this.isExt = false;
         this.isOylik = true;
       }
     },
@@ -369,6 +419,14 @@ export default {
       if ((this.isOylik = true)) {
         this.isNaqd = true;
         this.isOylik = false;
+        this.isExt = false;
+      }
+    },
+    toExt() {
+      if ((this.isExt = true)) {
+        this.isNaqd = false;
+        this.isOylik = false;
+        this.isExt = true;
       }
     },
     formatPhoneNumber() {
@@ -449,6 +507,12 @@ export default {
         case "body":
           this.info1 = "Narxlar bloki";
           break;
+        case "instructor":
+          this.info1 = "Instruktorlar tayyorlash";
+          break;
+        case "malaka-up":
+          this.info1 = "malaka oshirish";
+          break;
         default:
           break;
       }
@@ -527,7 +591,6 @@ export default {
       }
     },
   },
-  mounted() {},
 };
 </script>
 
@@ -542,7 +605,6 @@ export default {
     0px 3px 8px 0px rgba(0, 0, 0, 0.12);
   border: 0.5px solid rgba(40, 41, 49, 0.04);
   border-radius: 6px;
-  width: 150px;
   text-align: center;
   color: #407bff;
   font-weight: 600;
@@ -552,7 +614,6 @@ export default {
 .deactivated {
   text-align: center;
   padding: 6px 12px;
-  width: 150px;
   transition: 0.3s;
 }
 
@@ -599,13 +660,14 @@ input:valid + label {
 
 @media screen and (min-width: 1280px) {
   .active {
+    font-size: 16px;
     background: #ffffff;
     padding: 7px 13px;
     box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.04),
       0px 3px 8px 0px rgba(0, 0, 0, 0.12);
     border: 0.5px solid rgba(40, 41, 49, 0.04);
     border-radius: 6px;
-    width: 150px;
+    width: 180px;
     text-align: center;
     color: #407bff;
     font-weight: 600;
@@ -613,9 +675,10 @@ input:valid + label {
   }
 
   .deactivated {
+    font-size: 16px;
     text-align: center;
     padding: 7px 13px;
-    width: 150px;
+    width: 180px;
     transition: 0.3s;
   }
 }

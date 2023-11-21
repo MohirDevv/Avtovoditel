@@ -28,22 +28,26 @@
           class="level1 flex items-center justify-center gap-[110px] pb-[40px] xl:pb-0"
         >
           <div class="first flex items-start justify-center flex-col">
+            <div class="img-bg flex items-center justify-center rounded-[50px] bg-[#ffffff] bg-opacity-10">
             <img
               src="/src/assets/icons/bigger_home.svg"
-              class="bg-[#ffffff] bg-opacity-10 p-[10px] rounded-[50px]"
+              class="p-[10px] "
               alt="#"
             />
+          </div>
             <h3 class="text-white text-[40px] font-semibold">10+</h3>
             <p class="text-[#FFFFFFF2] text-[18px] font-medium">
               Filiallar soni
             </p>
           </div>
           <div class="first flex items-start justify-center flex-col">
+            <div class="img-bg flex items-center justify-center rounded-[50px] bg-[#ffffff] bg-opacity-10">
             <img
               src="/src/assets/icons/two_students.svg"
-              class="bg-[#ffffff] bg-opacity-10 p-[10px] rounded-[50px] w-[60px] h-[60px]"
+              class="p-[10px] w-[60px] h-[60px]"
               alt="#"
             />
+          </div>
             <h3 class="text-white text-[40px] font-semibold">9420</h3>
             <p class="text-[#FFFFFFF2] text-[18px] font-medium">
               Bitiruvchilar soni
