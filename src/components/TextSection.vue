@@ -23,9 +23,9 @@
       </div>
       <div
         class="iconsInfo pt-[40px] xl:flex xl:items-start xl:justify-center xl:gap-[100px] xl:ml-[180px]"
-      >
+       >
         <div
-          class="level1 flex items-center justify-center gap-[110px] pb-[40px] xl:pb-0"
+          class="level1 flex items-center justify-start xl:justify-center ml-[20px] gap-[70px] pb-[40px] xl:pb-0 xl:ml-0 xl:gap-[100px]"
         >
           <div class="first flex items-start justify-center flex-col">
             <div class="img-bg flex items-center justify-center rounded-[50px] bg-[#ffffff] bg-opacity-10">
@@ -54,7 +54,7 @@
             </p>
           </div>
         </div>
-        <div class="level2 flex items-start justify-center gap-[110px]">
+        <div class="level2 flex items-start justify-start xl:justify-center gap-[50px] ml-[20px] xl:gap-[100px]">
           <div class="first flex items-start justify-center flex-col">
             <img
               src="/src/assets/icons/speed.svg"
@@ -75,7 +75,7 @@
               alt="#"
             />
             <h3 class="text-white text-[40px] font-semibold">50+</h3>
-            <p class="text-[#FFFFFFF2] text-[18px] font-medium max-w-[240px]">
+            <p class="text-[#FFFFFFF2] text-[14px] font-medium w-[182px]">
               <!-- Mashinalar soni -->
               Yengil, yuk, avtobus va pritsepli transport vositalari
             </p>
