@@ -1,5 +1,5 @@
 <template>
-  <div class="container bg-white py-[50px] xl:py-[150px]">
+  <div class="container bg-white py-[50px] xl:py-[150px]" id="price">
     <div class="wrapper flex items-center justify-center flex-col">
       <h1 class="text-[#1B1B35] text-[24px] font-bold xl:text-[40px]">
         Narxlarlar

@@ -1,5 +1,5 @@
 <template>
-  <div class="container relative">
+  <div class="container relative mb-[100px] xl:mb-0" id="map">
     <iframe
       src="https://yandex.ru/map-widget/v1/?um=constructor%3A5b1cf91b6fee826f3e2d98db3bda0436463645637cef8a79be870bae5cfe0782&amp;source=constructor"
       width="100%"
@@ -63,6 +63,22 @@
       frameborder="0"
       class="z-10"
       v-if="isTuzel50"
+    ></iframe>
+    <iframe
+      src="https://yandex.ru/map-widget/v1/?um=constructor%3A89afa3e68624b8ffb2bea71a9f0c22769047072b4ce8ecbeb05869a243c46ec8&amp;source=constructor"
+      width="100%"
+      height="500"
+      frameborder="0"
+      class="z-10"
+      v-if="isOqituvchi"
+    ></iframe>
+    <iframe
+      src="https://yandex.ru/map-widget/v1/?um=constructor%3A6d78d4954e1b595d8d31346819684c3f8762610c538459f5d71616a2957f744c&amp;source=constructor"
+      width="100%"
+      height="500"
+      frameborder="0"
+      class="z-10"
+      v-if="isAngren"
     ></iframe>
     <div
       class="flex z-40 items-center justify-between w-[full] rounded-[6px] border-[1px] border-[#EAEAEA] relative top-[-72px] left-0 mx-[20px] xl:hidden"
@@ -160,6 +176,30 @@
             Tel: 93 009 77 88
           </p>
         </div>
+        <div
+          class="Oqituvchi cursor-pointer"
+          v-if="isOqituvchi"
+          v-on:click="isOpen = !isOpen"
+        >
+          <h3 class="text-[18px] font-normal text-[#1B1B35]">
+            M.Ulugbek tumani Qora-suv 2 Doniyor kochasi 2 berk
+          </h3>
+          <p class="text-[#808080] text-[18px] font-normal">
+            Tel: 99 979 11 88
+          </p>
+        </div>
+        <div
+          class="Angren cursor-pointer"
+          v-if="isAngren"
+          v-on:click="isOpen = !isOpen"
+        >
+          <h3 class="text-[18px] font-normal text-[#1B1B35]">
+            Angren shaxri Duken qorgoni Visol toyxonasi oldida
+          </h3>
+          <p class="text-[#808080] text-[18px] font-normal">
+            Tel: 97 771 08 88
+          </p>
+        </div>
 
         <button v-on:click="isOpen = !isOpen" class="block">
           <img
@@ -191,7 +231,9 @@
                   (isQushbegi = false),
                   (isSergili6a = false),
                   (isTuzel50 = false),
-                  (isOpen = false)
+                  (isOpen = false),
+                  (isAngren = false),
+                  (isOqituvchi = false)
               "
             >
               <h3 class="text-[18px] font-normal text-[#1B1B35]">
@@ -213,7 +255,9 @@
                   (isQushbegi = false),
                   (isSergili6a = false),
                   (isTuzel50 = false),
-                  (isOpen = false)
+                  (isOpen = false),
+                  (isAngren = false),
+                  (isOqituvchi = false)
               "
             >
               <h3 class="text-[18px] font-normal text-[#1B1B35]">
@@ -234,7 +278,9 @@
                   (isQushbegi = false),
                   (isSergili6a = false),
                   (isTuzel50 = false),
-                  (isOpen = false)
+                  (isOpen = false),
+                  (isAngren = false),
+                  (isOqituvchi = false)
               "
             >
               <h3 class="text-[18px] font-normal text-[#1B1B35]">
@@ -255,7 +301,9 @@
                   (isQushbegi = false),
                   (isSergili6a = false),
                   (isTuzel50 = false),
-                  (isOpen = false)
+                  (isOpen = false),
+                  (isAngren = false),
+                  (isOqituvchi = false)
               "
             >
               <h3 class="text-[18px] font-normal text-[#1B1B35]">
@@ -277,7 +325,9 @@
                   (isQushbegi = true),
                   (isSergili6a = false),
                   (isTuzel50 = false),
-                  (isOpen = false)
+                  (isOpen = false),
+                  (isAngren = false),
+                  (isOqituvchi = false)
               "
             >
               <h3 class="text-[18px] font-normal text-[#1B1B35] text-left">
@@ -299,7 +349,9 @@
                   (isQushbegi = false),
                   (isSergili6a = true),
                   (isTuzel50 = false),
-                  (isOpen = false)
+                  (isOpen = false),
+                  (isAngren = false),
+                  (isOqituvchi = false)
               "
             >
               <h3 class="text-[18px] font-normal text-[#1B1B35]">
@@ -319,8 +371,33 @@
                   (isYalongoch = false),
                   (isQushbegi = false),
                   (isSergili6a = false),
+                  (isTuzel50 = false),
+                  (isOpen = false),
+                  (isAngren = false),
+                  (isOqituvchi = true)
+              "
+            >
+              <h3 class="text-[18px] font-normal text-[#1B1B35]">
+                M.Ulugbek tumani Qora-suv 2 Doniyor kochasi 2 berk
+              </h3>
+              <p class="text-[#808080] text-[18px] font-normal">
+                Tel: 99 979 11 88
+              </p>
+            </div>
+            <div
+              class="hoveroption pb-[15px] mb-[15px] cursor-pointer"
+              @click="
+                (isDefault = false),
+                  (isTuzel = false),
+                  (isSergili = false),
+                  (isPanelniy = false),
+                  (isYalongoch = false),
+                  (isQushbegi = false),
+                  (isSergili6a = false),
                   (isTuzel50 = true),
-                  (isOpen = false)
+                  (isOpen = false),
+                  (isAngren = false),
+                  (isOqituvchi = false)
               "
             >
               <h3 class="text-[18px] font-normal text-[#1B1B35]">
@@ -328,6 +405,29 @@
               </h3>
               <p class="text-[#808080] text-[18px] font-normal">
                 Tel: 93 009 77 88
+              </p>
+            </div>
+            <div
+              class="hoveroption pb-[15px] mb-[15px] cursor-pointer"
+              @click="
+                (isDefault = false),
+                  (isTuzel = false),
+                  (isSergili = false),
+                  (isPanelniy = false),
+                  (isYalongoch = false),
+                  (isQushbegi = false),
+                  (isSergili6a = false),
+                  (isTuzel50 = false),
+                  (isOpen = false),
+                  (isAngren = true),
+                  (isOqituvchi = false)
+              "
+            >
+              <h3 class="text-[18px] font-normal text-[#1B1B35]">
+                Angren shaxri Duken qorgoni Visol toyxonasi oldida
+              </h3>
+              <p class="text-[#808080] text-[18px] font-normal">
+                Tel: 97 771 08 88
               </p>
             </div>
           </div>
@@ -354,6 +454,8 @@
                   (isQushbegi = false),
                   (isSergili6a = false),
                   (isTuzel50 = false),
+                  (isAngren = false),
+                  (isOqituvchi = false),
                   (isOpen = false)
               "
             >
@@ -376,6 +478,8 @@
                   (isQushbegi = false),
                   (isSergili6a = false),
                   (isTuzel50 = false),
+                  (isAngren = false),
+                  (isOqituvchi = false),
                   (isOpen = false)
               "
             >
@@ -397,6 +501,8 @@
                   (isQushbegi = false),
                   (isSergili6a = false),
                   (isTuzel50 = false),
+                  (isAngren = false),
+                  (isOqituvchi = false),
                   (isOpen = false)
               "
             >
@@ -418,6 +524,8 @@
                   (isQushbegi = false),
                   (isSergili6a = false),
                   (isTuzel50 = false),
+                  (isAngren = false),
+                  (isOqituvchi = false),
                   (isOpen = false)
               "
             >
@@ -440,6 +548,8 @@
                   (isQushbegi = true),
                   (isSergili6a = false),
                   (isTuzel50 = false),
+                  (isAngren = false),
+                  (isOqituvchi = false),
                   (isOpen = false)
               "
             >
@@ -462,6 +572,8 @@
                   (isQushbegi = false),
                   (isSergili6a = true),
                   (isTuzel50 = false),
+                  (isAngren = false),
+                  (isOqituvchi = false),
                   (isOpen = false)
               "
             >
@@ -483,6 +595,8 @@
                   (isQushbegi = false),
                   (isSergili6a = false),
                   (isTuzel50 = true),
+                  (isAngren = false),
+                  (isOqituvchi = false),
                   (isOpen = false)
               "
             >
@@ -491,6 +605,52 @@
               </h3>
               <p class="text-[#808080] text-[18px] font-normal">
                 Tel: 93 009 77 88
+              </p>
+            </div>
+            <div
+              class="hoveroption pb-[15px] mb-[15px] cursor-pointer"
+              @click="
+                (isDefault = false),
+                  (isTuzel = false),
+                  (isSergili = false),
+                  (isPanelniy = false),
+                  (isYalongoch = false),
+                  (isQushbegi = false),
+                  (isSergili6a = false),
+                  (isTuzel50 = false),
+                  (isAngren = false),
+                  (isOqituvchi = true),
+                  (isOpen = false)
+              "
+            >
+              <h3 class="text-[18px] font-normal text-[#1B1B35]">
+                M.Ulugbek tumani Qora-suv 2 Doniyor kochasi 2 berk
+              </h3>
+              <p class="text-[#808080] text-[18px] font-normal">
+                Tel: 99 979 11 88
+              </p>
+            </div>
+            <div
+              class="hoveroption pb-[15px] mb-[15px] cursor-pointer"
+              @click="
+                (isDefault = false),
+                  (isTuzel = false),
+                  (isSergili = false),
+                  (isPanelniy = false),
+                  (isYalongoch = false),
+                  (isQushbegi = false),
+                  (isSergili6a = false),
+                  (isTuzel50 = false),
+                  (isAngren = true),
+                  (isOqituvchi = false),
+                  (isOpen = false)
+              "
+            >
+              <h3 class="text-[18px] font-normal text-[#1B1B35]">
+                Angren shaxri Duken qorgoni Visol toyxonasi oldida
+              </h3>
+              <p class="text-[#808080] text-[18px] font-normal">
+                Tel: 97 771 08 88
               </p>
             </div>
           </div>
@@ -505,8 +665,8 @@ export default {
   data() {
     return {
       isOpen: false,
-      isChanged: false,
       isDefault: true,
+      isChanged: false,
       isSergili: false,
       isTuzel: false,
       isPanelniy: false,
@@ -514,6 +674,8 @@ export default {
       isQushbegi: false,
       isSergili6a: false,
       isTuzel50: false,
+      isOqituvchi: false,
+      isAngren: false,
     };
   },
 };
@@ -542,7 +704,7 @@ export default {
 
 @media screen and (min-width: 1280px) {
   iframe {
-    height: 862px;
+    height: 1030px;
   }
 }
 </style>

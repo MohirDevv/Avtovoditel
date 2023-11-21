@@ -6,30 +6,27 @@
       class="wrapper flex items-center justify-center flex-col xl:flex-row xl:relative overflow-x-hidden xl:justify-start"
     >
       <div
-        class="content max-w-[360px] xl:max-w-[1100px] xl:pl-[150px] 2xl:pl-[250px] xl:pb-[113px]"
+        class="content max-w-[360px] xl:max-w-[1100px] xl:pl-[110px] 2xl:pl-[250px] xl:pb-[30px] 3xl:pb-[80px]"
       >
         <div
-          class="entrImage flex items-start justify-start relative pb-[10px] xl:pb-[62px] xl:pt-[20px]"
+          class="entrImage flex items-start justify-start relative pb-[10px] xl:pb-[32px] xl:pt-[20px]"
         >
-          <img
-            src="../assets/icons/avtovoditel_icon.svg"
-            class="hidden xl:block"
-            alt="#"
-          />
-          <img
-            src="/src/assets/icons/car+symbol.svg"
-            class="block xl:hidden"
-            alt=""
-          />
-          <img
-            src="/src/assets/icons/last-symbol.png"
-            class="absolute -top-5 -right-12 xl:hidden"
-            alt="#"
-          />
+          <div
+            class="logo flex items-center justify-center gap-[10px] xl:mt-0 mt-[25px]"
+          >
+            <img
+              src="../assets/icons/logo.svg"
+              class="w-[55px] h-[55px]"
+              alt="#"
+            />
+            <h1 class="text-white text-[16px] xl:text-[24px] font-extrabold">
+              AVTOVODITEL
+            </h1>
+          </div>
         </div>
         <div class="entrText">
           <h1
-            class="text-white text-[24px] xl:text-[50px] font-black uppercase mb-[15px]"
+            class="max-w-[800px] text-white text-[24px] xl:text-[50px] font-black uppercase mb-[15px]"
           >
             Hech qanday qo'rquv va stresslarsiz Mashina haydashni o'rganing!
           </h1>
@@ -49,10 +46,9 @@
             </div>
           </div>
         </div>
-        <div
-          class="iconsinfo1 flex items-center justify-between xl:justify-normal xl:gap-[30px] pb-[30px] pr-[30px]"
+        <div class="iconsinfo1 flex items-center justify-between xl:justify-normal xl:gap-[30px] pb-[30px] pr-[30px] xl:pr-0"
         >
-          <div class="first xl:flex xl:items-center xl:gap-[15px]">
+          <div class="first xl:flex xl:items-center xl:gap-[15px] xl:pr-[12px]">
             <img
               src="/src/assets/icons/calen.svg"
               class="bg-[#FFFFFF1A] rounded-[50%] p-[8px] mb-[8px]"
@@ -78,7 +74,7 @@
           </div>
         </div>
         <div
-          class="iconsinfo2 flex items-center justify-between border-[#FFFFFF1A] border-b-2 pb-[20px] mb-[30px] xl:justify-normal xl:gap-[40px] xl:border-none"
+          class="iconsinfo2 flex items-center justify-between pb-[20px] xl:justify-normal xl:gap-[40px]"
         >
           <div class="first xl:flex xl:items-center xl:gap-[15px]">
             <img
@@ -102,6 +98,24 @@
               class="text-white text-[16px] xl:text-[20px] xl:font-medium font-semibold"
             >
               Toshkent bo'yicha 10 ta fillial
+            </p>
+          </div>
+        </div>
+        <div
+          class="iconsinfo3 flex items-center justify-between border-[#FFFFFF1A] border-b-2 pb-[20px] mb-[30px] xl:justify-normal xl:gap-[40px] xl:border-none"
+        >
+          <div
+            class="third xl:flex xl:items-center xl:gap-[15px] justify-center"
+          >
+            <img
+              src="/src/assets/icons/world-wide.svg"
+              class="bg-[#FFFFFF1A] rounded-[50%] p-[8px] w-[40px] h-[40px] mb-0 xl:mb-2"
+              alt="#"
+            />
+            <p
+              class="text-white text-[16px] xl:text-[20px] xl:font-medium font-semibold"
+            >
+              Darslar rus va o'zbek tilida bo'lib o'tadi
             </p>
           </div>
         </div>
@@ -131,7 +145,7 @@
       <div class="bigcar hidden xl:flex absolute bottom-0 right-0">
         <img
           src="/src/assets/icons/xlcar.svg"
-          class="w-[350px] 2xl:w-[500px]"
+          class="w-[400px] 2xl:w-[500px] 3xl:w-[770px]"
           alt="#"
         />
       </div>
@@ -141,14 +155,27 @@
         Xonalarimiz eshiklari siz uchun ochiq
       </h3>
     </div>
+    <div class="entroptions absolute mt-[19px] hidden xl:block">
+      <div
+        class="options flex gap-10 bg-[#FFFFFF1A] py-[15px] px-[30px] rounded-full border-[#515359] border"
+      >
+        <p
+          class="text-white hover:text-[#407BFF] transition-all cursor-pointer"
+          @click="scrollToPrice"
+        >
+          Narxlar
+        </p>
+        <p
+          class="text-white hover:text-[#407BFF] transition-all cursor-pointer"
+          @click="scrollToMap"
+        >
+          Filiallar
+        </p>
+      </div>
+    </div>
     <img
       src="/src/assets/icons/stop.svg"
       class="absolute bottom-[15%] left-[-50px] hidden xl:block"
-      alt="#"
-    />
-    <img
-      src="/src/assets/icons/go-on.svg"
-      class="absolute top-[30%] right-[10%] hidden xl:block"
       alt="#"
     />
     <img
@@ -158,7 +185,7 @@
     />
 
     <p
-      class="paragc text-[#D8E1FF] text-[20px] font-medium absolute bg-[#3d3c3c6b] rounded px-[20px] py-[10px] text-center hidden xl:block"
+      class="paragc text-[#D8E1FF] text-[20px] font-medium absolute bg-[#FFFFFF1A] px-[20px] py-[10px] text-center hidden xl:block"
     >
       Xonalarimiz eshiklari siz uchun ochiq
     </p>
@@ -259,6 +286,22 @@ export default {
     window.addEventListener("scroll", this.handleScroll);
   },
   methods: {
+    scrollToPrice() {
+      const priceElement = document.getElementById("price");
+      if (priceElement) {
+        priceElement.scrollIntoView({
+          behavior: "smooth", // Optional for smooth scrolling
+        });
+      }
+    },
+    scrollToMap() {
+      const mapElement = document.getElementById("map");
+      if (mapElement) {
+        mapElement.scrollIntoView({
+          behavior: "smooth", // Optional for smooth scrolling
+        });
+      }
+    },
     handleScroll: function () {
       if (this.scTimer) return;
       this.scTimer = setTimeout(() => {
@@ -436,7 +479,14 @@ input:valid + label {
   max-width: 1980px;
 }
 .paragc {
-  top: 0%;
+  width: 400px;
+  bottom: 33%;
+  left: 83%;
+  transform: translate(-50%, 0%);
+  border-radius: 16px 16px 0px 16px;
+}
+.entroptions {
+  top: 0;
   left: 50%;
   transform: translate(-50%, 0%);
 }
@@ -462,6 +512,25 @@ input:valid + label {
 @media screen and (min-width: 440px) {
   .container {
     padding-bottom: 0px;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .paragc {
+    width: 400px;
+    bottom: 38%;
+    left: 87%;
+    transform: translate(-50%, 0%);
+    border-radius: 16px 16px 0px 16px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .paragc {
+    width: 400px;
+    bottom: 58%;
+    left: 85%;
+    transform: translate(-50%, 0%);
+    border-radius: 16px 16px 0px 16px;
   }
 }
 </style>
