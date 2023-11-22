@@ -22,11 +22,11 @@
         </p>
       </div>
       <div
-        class="iconsInfo pt-[40px] xl:flex xl:items-start xl:justify-center xl:gap-[100px] xl:ml-[180px]
+        class="iconsInfo pt-[40px] xl:flex xl:items-start xl:justify-center xl:gap-[55px] xl:ml-[180px]
          "
        >
         <div
-          class="level1 flex items-center justify-center xl:justify-center m-auto gap-[70px] pb-[40px] xl:pb-0 xl:ml-0 xl:gap-[100px]"
+          class="level1 flex items-center justify-center xl:justify-center m-auto gap-[70px] pb-[40px] xl:pb-0 xl:ml-0 xl:gap-[100px] xl:m-0"
         >
           <div class="first flex items-start justify-center flex-col">
             <div class="img-bg flex items-center justify-center rounded-[50px] bg-[#ffffff] bg-opacity-10">
@@ -56,7 +56,7 @@
           </div>
         </div>
         <div class="level2 flex items-start justify-between xl:justify-center gap-[5px] m-auto xl:gap-[100px]
-         w-[360px]">
+         w-[360px] xl:w-[500px] xl:m-0">
           <div class="first flex items-start justify-center flex-col ml-[27px]">
             <img
               src="/src/assets/icons/speed.svg"
@@ -70,7 +70,7 @@
           </div>
           <div
             class="first flex items-start justify-center flex-col w-[136px] sm:w-[139px] xl:w-[240px]
-             mr-[30px]"
+             mr-[30px] xl:mr-0"
           >
             <img
               src="/src/assets/icons/car.svg"
