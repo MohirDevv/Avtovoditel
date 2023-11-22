@@ -85,11 +85,11 @@
             <div
               class="img-bg flex items-center justify-center bg-[#FFFFFF1A] rounded-[50%] w-[40px] h-[40px] mb-[8px]"
             >
-            <img
-              src="/src/assets/icons/responsive.svg"
-              class="p-[8px]"
-              alt="#"
-            />
+              <img
+                src="/src/assets/icons/responsive.svg"
+                class="p-[8px]"
+                alt="#"
+              />
             </div>
             <p
               class="text-white text-[16px] xl:text-[20px] xl:font-medium font-semibold"
@@ -101,11 +101,7 @@
             <div
               class="img-bg flex items-center justify-center bg-[#FFFFFF1A] rounded-[50%] w-[40px] h-[40px] mb-[8px]"
             >
-            <img
-              src="/src/assets/icons/home.svg"
-              class="p-[8px]"
-              alt="#"
-            />
+              <img src="/src/assets/icons/home.svg" class="p-[8px]" alt="#" />
             </div>
             <p
               class="text-white text-[16px] xl:text-[20px] xl:font-medium font-semibold"
@@ -120,14 +116,14 @@
           <div
             class="third xl:flex xl:items-center xl:gap-[15px] justify-center"
           >
-          <div
+            <div
               class="img-bg flex items-center justify-center bg-[#FFFFFF1A] rounded-[50%] w-[40px] h-[40px] mb-[8px]"
             >
-            <img
-              src="/src/assets/icons/world-wide.svg"
-              class="p-[8px]"
-              alt="#"
-            />
+              <img
+                src="/src/assets/icons/world-wide.svg"
+                class="p-[8px]"
+                alt="#"
+              />
             </div>
             <p
               class="text-white text-[16px] xl:text-[20px] xl:font-medium font-semibold"
@@ -166,11 +162,16 @@
           alt="#"
         />
       </div>
-      <h3
-        class="w-[100%] max-w-[100%] text-[13px] text-center text-[#D8E1FF] font-medium bg-[#D2E0FF1A] py-[10px] xl:hidden"
+      <div
+        class="div flex items-center justify-center w-[100%] max-w-[100%] bg-[#D2E0FF1A] py-[10px] mb-[6px] xl:hidden"
       >
-        Xonalarimiz eshiklari siz uchun ochiq
-      </h3>
+        <h3
+          class="text-[13px] text-center text-[#D8E1FF] font-medium 
+           "
+        >
+          Xonalarimiz eshiklari siz uchun ochiq
+        </h3>
+      </div>
     </div>
     <div class="entroptions absolute mt-[19px] hidden xl:block">
       <div
@@ -536,7 +537,7 @@ input:valid + label {
   .paragc {
     width: 400px;
     bottom: 38%;
-    left: 87%;
+    left: 84%;
     transform: translate(-50%, 0%);
     border-radius: 16px 16px 0px 16px;
   }
@@ -544,8 +545,8 @@ input:valid + label {
 @media screen and (min-width: 1920px) {
   .paragc {
     width: 400px;
-    bottom: 58%;
-    left: 85%;
+    bottom: 52%;
+    left: 85.6%;
     transform: translate(-50%, 0%);
     border-radius: 16px 16px 0px 16px;
   }
