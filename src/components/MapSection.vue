@@ -439,7 +439,7 @@
     >
       <div class="scroll z-10 block">
         <div
-          class="w-[550px] bg-white rounded-[8px] border-[1px] border-[#EAEAEA] absolute bottom-[-40px] left-[10px] p-[30px]"
+          class="w-[550px] bg-white rounded-[8px] border-[1px] border-[#EAEAEA] absolute bottom-[-40px] left-[10px] p-[30px] h-[550px] overflow-y-auto"
         >
           <div>
             <h1 class="text-[32px] font-bold">Filiallar</h1>
@@ -704,7 +704,7 @@ export default {
 
 @media screen and (min-width: 1280px) {
   iframe {
-    height: 1030px;
+    height: 600px;
   }
 }
 </style>
