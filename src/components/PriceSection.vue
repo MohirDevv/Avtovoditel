@@ -290,8 +290,7 @@
             class="card1 flex items-center justify-center flex-col border-[#E0E0E0] border rounded-xl p-[25px] gap-[20px]"
           >
             <h2
-              class="text-[22px] text-[#1B1B35] font-medium text-center w-[303px] xl:h-[66px]
-               xl:flex xl:items-center xl:justify-center"
+              class="text-[22px] text-[#1B1B35] font-medium text-center w-[303px] xl:h-[66px] xl:flex xl:items-center xl:justify-center"
             >
               Instruktorlar tayyorlash
             </h2>
@@ -377,6 +376,31 @@
             />
             <label for="validator_num">Raqamingiz</label>
           </div>
+          <div
+            class="dropdown flex items-center justify-between transition-all bg-[#e0e0e0] hover:bg-[#c1c1c1] rounded-lg mb-[10px] p-[10px] w-[300px]"
+            @click.prevent="toggleDropdown"
+          >
+            <button class="dropdown-button flex justify-between items-center">
+              {{ selectedOption || "Filial" }}
+            </button>
+            <img
+              src="/src/assets/icons/dropdown-arrow.svg"
+              alt="#"
+              class="w-[20px] h-[24px] rotate-180 transition-all"
+              :class="arrowRotationClass"
+            />
+            <div v-if="isDropdownOpen" class="dropdown-options">
+              <ul class="h-[210px] overflow-auto">
+                <li
+                  v-for="(option, index) in dropdownOptions"
+                  :key="index"
+                  @click="selectOption(option)"
+                >
+                  {{ option }}
+                </li>
+              </ul>
+            </div>
+          </div>
         </form>
         <button
           class="bg-[#407BFF] rounded-[50px] text-white px-[103px] py-[14px] mb-[10px] hover:bg-[#2C5AC2] transition-all"
@@ -405,6 +429,19 @@ export default {
       name: null,
       info1: "",
       isDataSent: false,
+      isDropdownOpen: false,
+      selectedOption: null,
+      dropdownOptions: [
+        " Sergeli tumani Quruvchilar massivi 32 uy 1 qavat. Mo'ljal 305-maktab",
+        " Yashnobod tumani Tuzel chorraxa 2-qavat",
+        " Yashnobod tumani Panelniy massiv Oxangrabo ko'chasi",
+        " Mirzo Ulugbek tumani yalangoch daxasi Madaniyat instituti yaqinida",
+        " Yakkasaroy tumani Qushbegi daxasi 30 B uy. Oldingi Sulton restorani binosi 3 qavat",
+        " Sergeli tumani 6A 77 uy",
+        " Yashnobod tumani Tuzel - 1 50 uy",
+        " M.Ulugbek tumani Qora-suv 2 Doniyor kochasi 2 berk",
+        " Angren shaxri Duken qorgoni Visol toyxonasi oldida",
+      ],
     };
   },
   methods: {
@@ -490,28 +527,28 @@ export default {
       this.isOpen = true;
       switch (val) {
         case "e":
-          this.info1 = "Narxlar bloki, E";
+          this.info1 = "Narxlar bloki, E, ";
           break;
         case "d":
-          this.info1 = "Narxlar bloki, D";
+          this.info1 = "Narxlar bloki, D, ";
           break;
         case "c":
-          this.info1 = "Narxlar bloki, C";
+          this.info1 = "Narxlar bloki, C, ";
           break;
         case "bc":
-          this.info1 = "Narxlar bloki, BC";
+          this.info1 = "Narxlar bloki, BC, ";
           break;
         case "b":
-          this.info1 = "Narxlar bloki, B";
+          this.info1 = "Narxlar bloki, B, ";
           break;
         case "body":
-          this.info1 = "Narxlar bloki";
+          this.info1 = "Narxlar bloki, ";
           break;
         case "instructor":
-          this.info1 = "Instruktorlar tayyorlash";
+          this.info1 = "Instruktorlar tayyorlash, ";
           break;
         case "malaka-up":
-          this.info1 = "malaka oshirish";
+          this.info1 = "malaka oshirish, ";
           break;
         default:
           break;
@@ -523,78 +560,126 @@ export default {
       }
     },
     sendData() {
-      const body = {
-        name: this.name,
-        phone_number: this.phone.replaceAll("-", "").replaceAll(" ", ""),
-        project: "avtovoditel",
-        info: this.info1,
-      };
+      if (!this.selectedOption) {
+        alert("Filialni tanlang!");
+      } else {
+        const body = {
+          name: this.name,
+          phone_number: this.phone.replaceAll("-", "").replaceAll(" ", ""),
+          info: this.info1 + this.selectedOption,
+          project: "avtovoditel-test",
+        };
 
-      if (
-        this.isVAlidName !== true ||
-        this.isValidNum !== true ||
-        this.isVAlidName == null ||
-        this.isValidNum == null
-      ) {
-        const name = document.getElementById("validator_name");
-        const num = document.getElementById("validator_num");
+        if (
+          this.isVAlidName !== true ||
+          this.isValidNum !== true ||
+          this.isVAlidName == null ||
+          this.isValidNum == null
+        ) {
+          const name = document.getElementById("validator_name");
+          const num = document.getElementById("validator_num");
 
-        num.classList.add("invalid");
-        name.classList.add("invalid");
-      } else if (this.isValidNum == true && this.isVAlidName == true) {
-        const name = document.getElementById("validator_name");
-        const num = document.getElementById("validator_num");
+          num.classList.add("invalid");
+          name.classList.add("invalid");
+        } else if (this.isValidNum == true && this.isVAlidName == true) {
+          const name = document.getElementById("validator_name");
+          const num = document.getElementById("validator_num");
 
-        num.classList.remove("invalid");
-        name.classList.remove("invalid");
-        this.isOpen = false;
-        this.isDataSent = true;
-        if (this.isDataSent == true) {
-          Swal.fire({
-            icon: "success",
-            title: "Arizangiz qabul qilindi",
-            showConfirmButton: false,
-            iconColor: "#407BFF",
-            timer: 2000,
-          });
-        } else {
-          Swal.fire({
-            icon: "warning",
-            title: "Xato!",
-            showConfirmButton: false,
-            timer: 1800,
-          });
+          num.classList.remove("invalid");
+          name.classList.remove("invalid");
+          this.isOpen = false;
+          this.isDataSent = true;
+          if (this.isDataSent == true) {
+            Swal.fire({
+              icon: "success",
+              title: "Arizangiz qabul qilindi",
+              showConfirmButton: false,
+              iconColor: "#407BFF",
+              timer: 2000,
+            });
+          } else {
+            Swal.fire({
+              icon: "warning",
+              title: "Xato!",
+              showConfirmButton: false,
+              timer: 1800,
+            });
+          }
+          setTimeout(() => {
+            this.phone = "";
+            this.name = "";
+            this.info1 = "";
+          }, 3000);
+          setTimeout(() => {
+            this.isDataSent = false;
+          }, 2000);
+          console.log("success");
+          axios
+            .post("https://crm.redapp.uz/api/customer/", body)
+            .then((response) => {
+              console.log(response);
+            })
+            .catch((error) => {
+              console.log(error);
+              if (error) {
+                alert("Xato!");
+                this.phone = "";
+                this.name = "";
+                this.info1 = "";
+              }
+            });
         }
-        setTimeout(() => {
-          this.phone = "";
-          this.name = "";
-          this.info1 = "";
-        }, 3000);
-        setTimeout(() => {
-          this.isDataSent = false;
-        }, 2000);
-        console.log("success");
-        axios
-          .post("https://crm.redapp.uz/api/customer/", body)
-          .then((response) => {
-            console.log(response);
-          })
-          .catch((error) => {
-            console.log(error);
-            if (error) {
-              alert("Xato!");
-              this.phone = "";
-              this.name = "";
-              this.info1 = "";
-            }
-          });
       }
+    },
+    toggleDropdown() {
+      this.isDropdownOpen = !this.isDropdownOpen;
+    },
+    selectOption(option) {
+      this.selectedOption = option;
+      this.isDropdownOpen = false;
+    },
+  },
+  computed: {
+    arrowRotationClass() {
+      return this.isDropdownOpen ? "rotate-0" : ""; // или другие ваши классы
     },
   },
 };
 </script>
 
 <style scoped>
+.dropdown {
+  position: relative;
+  /* display: inline-block; */
+}
+
+.dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.dropdown-options ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-options li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dropdown-options li:hover {
+  background-color: #f0f0f0;
+}
+
 .invalid {
   border-bottom: 1px solid rgba(251, 74, 74, 0.4);
 }

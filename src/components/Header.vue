@@ -165,10 +165,7 @@
       <div
         class="div flex items-center justify-center w-[100%] max-w-[100%] bg-[#D2E0FF1A] py-[10px] mb-[6px] xl:hidden"
       >
-        <h3
-          class="text-[13px] text-center text-[#D8E1FF] font-medium 
-           "
-        >
+        <h3 class="text-[13px] text-center text-[#D8E1FF] font-medium">
           Xonalarimiz eshiklari siz uchun ochiq
         </h3>
       </div>
@@ -243,7 +240,7 @@
         <p class="text-center text-[#BABABA] text-[16px] mb-[20px]">
           Biz siz bilan albatta bog'lanamiz
         </p>
-        <form class="w-[310px]">
+        <form class="">
           <div class="input-container mt-[20px]">
             <input
               class="border-b-[1px] border-[#E0E0E0] w-[300px] 2xl:mb-[50px] mb-[40px]"
@@ -256,7 +253,7 @@
             <label for="name">Ism</label>
           </div>
 
-          <div class="input-container">
+          <div class="input-container h-[50px]">
             <input
               class="border-b-[1px] border-[#E0E0E0] w-[300px] mb-[50px]"
               type="tel"
@@ -267,6 +264,41 @@
               required
             />
             <label for="number">Raqamingiz</label>
+          </div>
+          <!-- <div
+            class="dropdown flex items-center justify-between transition-all bg-[#e0e0e0] hover:bg-[#c1c1c1] rounded-lg mb-[10px] w-[300px] h-[50px] px-[15px]"
+          >
+            <p class="">Filial</p>
+            <img
+              src="/src/assets/icons/dropdown-arrow.svg"
+              alt="#"
+              class="w-[20px] h-[24px] rotate-180"
+            />
+          </div> -->
+          <div
+            class="dropdown flex items-center justify-between transition-all bg-[#e0e0e0] hover:bg-[#c1c1c1] rounded-lg mb-[10px] p-[10px] w-[300px]"
+            @click.prevent="toggleDropdown"
+          >
+            <button class="dropdown-button flex justify-between items-center">
+              {{ selectedOption || "Filial" }}
+            </button>
+            <img
+              src="/src/assets/icons/dropdown-arrow.svg"
+              alt="#"
+              class="w-[20px] h-[24px] rotate-180 transition-all"
+              :class="arrowRotationClass"
+            />
+            <div v-if="isDropdownOpen" class="dropdown-options">
+              <ul class="h-[210px] overflow-auto">
+                <li
+                  v-for="(option, index) in dropdownOptions"
+                  :key="index"
+                  @click="selectOption(option)"
+                >
+                  {{ option }}
+                </li>
+              </ul>
+            </div>
           </div>
         </form>
         <button
@@ -291,10 +323,23 @@ export default {
       scY: 0,
       phone: null,
       name: null,
-      info2: "Pop-up",
+      info2: "Pop-up,",
       isValidNumber: null,
       isValiddName: null,
       isDataSentHeader: false,
+      isDropdownOpen: false,
+      selectedOption: null,
+      dropdownOptions: [
+        " Sergeli tumani Quruvchilar massivi 32 uy 1 qavat. Mo'ljal 305-maktab",
+        " Yashnobod tumani Tuzel chorraxa 2-qavat",
+        " Yashnobod tumani Panelniy massiv Oxangrabo ko'chasi",
+        " Mirzo Ulugbek tumani yalangoch daxasi Madaniyat instituti yaqinida",
+        " Yakkasaroy tumani Qushbegi daxasi 30 B uy. Oldingi Sulton restorani binosi 3 qavat",
+        " Sergeli tumani 6A 77 uy",
+        " Yashnobod tumani Tuzel - 1 50 uy",
+        " M.Ulugbek tumani Qora-suv 2 Doniyor kochasi 2 berk",
+        " Angren shaxri Duken qorgoni Visol toyxonasi oldida",
+      ],
     };
   },
   mounted() {
@@ -407,63 +452,79 @@ export default {
       }
     },
     sendData() {
-      const body = {
-        name: this.name,
-        phone_number: this.phone.replaceAll("-", "").replaceAll(" ", ""),
-        info: this.info2,
-        project: "avtovoditel",
-      };
-      if (
-        this.isValiddName !== true ||
-        this.isValidNumber !== true ||
-        this.isValiddName == null ||
-        this.isValidNumber == null
-      ) {
-        const name = document.getElementById("name");
-        const num = document.getElementById("number");
+      if (!this.selectedOption) {
+        alert("Filialni tanlang!");
+      } else {
+        const body = {
+          name: this.name,
+          phone_number: this.phone.replaceAll("-", "").replaceAll(" ", ""),
+          info: this.info2 + this.selectedOption,
+          project: "avtovoditel-test",
+        };
+        if (
+          this.isValiddName !== true ||
+          this.isValidNumber !== true ||
+          this.isValiddName == null ||
+          this.isValidNumber == null
+        ) {
+          const name = document.getElementById("name");
+          const num = document.getElementById("number");
 
-        num.classList.add("invalid");
-        name.classList.add("invalid");
-      } else if (this.isValidNumber == true && this.isValiddName == true) {
-        const name = document.getElementById("name");
-        const num = document.getElementById("number");
+          num.classList.add("invalid");
+          name.classList.add("invalid");
+        } else if (this.isValidNumber == true && this.isValiddName == true) {
+          const name = document.getElementById("name");
+          const num = document.getElementById("number");
 
-        num.classList.remove("invalid");
-        name.classList.remove("invalid");
-        this.isOpen = false;
-        this.isDataSentHeader = true;
-        if (this.isDataSentHeader == true) {
-          Swal.fire({
-            icon: "success",
-            title: "Arizangiz qabul qilindi)",
-            showConfirmButton: false,
-            iconColor: "#407BFF",
-            timer: 2000,
-          });
+          num.classList.remove("invalid");
+          name.classList.remove("invalid");
+          this.isOpen = false;
+          this.isDataSentHeader = true;
+          if (this.isDataSentHeader == true) {
+            Swal.fire({
+              icon: "success",
+              title: "Arizangiz qabul qilindi)",
+              showConfirmButton: false,
+              iconColor: "#407BFF",
+              timer: 2000,
+            });
+          }
+          setTimeout(() => {
+            this.phone = "";
+            this.name = "";
+          }, 2000);
+          setTimeout(() => {
+            this.isDataSentHeader = false;
+          }, 2000);
+          console.log("success");
+
+          axios
+            .post("https://crm.redapp.uz/api/customer/", body)
+            .then((response) => {
+              console.log(response);
+            })
+            .catch((error) => {
+              console.log(error);
+              if (error) {
+                this.phone = "";
+                this.name = "";
+                alert("Xato!");
+              }
+            });
         }
-        setTimeout(() => {
-          this.phone = "";
-          this.name = "";
-        }, 2000);
-        setTimeout(() => {
-          this.isDataSentHeader = false;
-        }, 2000);
-        console.log("success");
-
-        axios
-          .post("https://crm.redapp.uz/api/customer/", body)
-          .then((response) => {
-            console.log(response);
-          })
-          .catch((error) => {
-            console.log(error);
-            if (error) {
-              this.phone = "";
-              this.name = "";
-              alert("Xato!");
-            }
-          });
       }
+    },
+    toggleDropdown() {
+      this.isDropdownOpen = !this.isDropdownOpen;
+    },
+    selectOption(option) {
+      this.selectedOption = option;
+      this.isDropdownOpen = false;
+    },
+  },
+  computed: {
+    arrowRotationClass() {
+      return this.isDropdownOpen ? "rotate-0" : ""; // или другие ваши классы
     },
   },
 };
@@ -516,6 +577,37 @@ input:valid + label {
 #pagetop {
   animation: fadeIn 0.7s;
   transition: 2s;
+}
+.dropdown {
+  position: relative;
+  /* display: inline-block; */
+}
+
+.dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.dropdown-options ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-options li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dropdown-options li:hover {
+  background-color: #f0f0f0;
 }
 
 @keyframes fadeIn {
