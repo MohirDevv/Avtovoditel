@@ -459,7 +459,7 @@ export default {
           name: this.name,
           phone_number: this.phone.replaceAll("-", "").replaceAll(" ", ""),
           info: this.info2 + this.selectedOption,
-          project: "avtovoditel-test",
+          project: "avtovoditel",
         };
         if (
           this.isValiddName !== true ||

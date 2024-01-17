@@ -567,7 +567,7 @@ export default {
           name: this.name,
           phone_number: this.phone.replaceAll("-", "").replaceAll(" ", ""),
           info: this.info1 + this.selectedOption,
-          project: "avtovoditel-test",
+          project: "avtovoditel",
         };
 
         if (
