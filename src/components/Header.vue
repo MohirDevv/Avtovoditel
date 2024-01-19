@@ -265,16 +265,6 @@
             />
             <label for="number">Raqamingiz</label>
           </div>
-          <!-- <div
-            class="dropdown flex items-center justify-between transition-all bg-[#e0e0e0] hover:bg-[#c1c1c1] rounded-lg mb-[10px] w-[300px] h-[50px] px-[15px]"
-          >
-            <p class="">Filial</p>
-            <img
-              src="/src/assets/icons/dropdown-arrow.svg"
-              alt="#"
-              class="w-[20px] h-[24px] rotate-180"
-            />
-          </div> -->
           <div
             class="dropdown flex items-center justify-between transition-all bg-[#e0e0e0] hover:bg-[#c1c1c1] rounded-lg mb-[10px] p-[10px] w-[300px]"
             @click.prevent="toggleDropdown"
@@ -285,7 +275,7 @@
             <img
               src="/src/assets/icons/dropdown-arrow.svg"
               alt="#"
-              class="w-[20px] h-[24px] rotate-180 transition-all"
+              class="w-[20px] h-[24px] transition-all"
               :class="arrowRotationClass"
             />
             <div v-if="isDropdownOpen" class="dropdown-options">
@@ -516,15 +506,16 @@ export default {
     },
     toggleDropdown() {
       this.isDropdownOpen = !this.isDropdownOpen;
+      console.log(this.isDropdownOpen);
     },
     selectOption(option) {
       this.selectedOption = option;
-      this.isDropdownOpen = false;
+      console.log(this.isDropdownOpen);
     },
   },
   computed: {
     arrowRotationClass() {
-      return this.isDropdownOpen ? "rotate-0" : ""; // или другие ваши классы
+      return this.isDropdownOpen ? "rotate-0" : "rotate-180";
     },
   },
 };
