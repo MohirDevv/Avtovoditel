@@ -386,7 +386,7 @@
             <img
               src="/src/assets/icons/dropdown-arrow.svg"
               alt="#"
-              class="w-[20px] h-[24px] rotate-180 transition-all"
+              class="w-[20px] h-[24px] transition-all"
               :class="arrowRotationClass"
             />
             <div v-if="isDropdownOpen" class="dropdown-options">
@@ -636,12 +636,11 @@ export default {
     },
     selectOption(option) {
       this.selectedOption = option;
-      this.isDropdownOpen = false;
     },
   },
   computed: {
     arrowRotationClass() {
-      return this.isDropdownOpen ? "rotate-0" : ""; // или другие ваши классы
+      return this.isDropdownOpen ? "rotate-0" : "rotate-180";
     },
   },
 };

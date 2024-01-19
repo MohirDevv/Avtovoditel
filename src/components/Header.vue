@@ -506,11 +506,9 @@ export default {
     },
     toggleDropdown() {
       this.isDropdownOpen = !this.isDropdownOpen;
-      console.log(this.isDropdownOpen);
     },
     selectOption(option) {
       this.selectedOption = option;
-      console.log(this.isDropdownOpen);
     },
   },
   computed: {
